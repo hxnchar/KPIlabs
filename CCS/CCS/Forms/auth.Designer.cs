@@ -46,7 +46,7 @@ namespace CCS
             this.buttonAuth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAuth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAuth.ForeColor = System.Drawing.Color.White;
-            this.buttonAuth.Location = new System.Drawing.Point(134, 147);
+            this.buttonAuth.Location = new System.Drawing.Point(143, 171);
             this.buttonAuth.Name = "buttonAuth";
             this.buttonAuth.Size = new System.Drawing.Size(148, 44);
             this.buttonAuth.TabIndex = 0;
@@ -56,13 +56,13 @@ namespace CCS
             // 
             // forgotLabel
             // 
-            this.forgotLabel.AutoSize = true;
+            this.forgotLabel.BackColor = System.Drawing.Color.Transparent;
             this.forgotLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.forgotLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.forgotLabel.ForeColor = System.Drawing.Color.White;
-            this.forgotLabel.Location = new System.Drawing.Point(131, 198);
+            this.forgotLabel.Location = new System.Drawing.Point(142, 216);
             this.forgotLabel.Name = "forgotLabel";
-            this.forgotLabel.Size = new System.Drawing.Size(151, 16);
+            this.forgotLabel.Size = new System.Drawing.Size(151, 24);
             this.forgotLabel.TabIndex = 1;
             this.forgotLabel.Text = "Забули логін/пароль?";
             this.forgotLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -72,8 +72,9 @@ namespace CCS
             // 
             // loginTextBox
             // 
+            this.loginTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.loginTextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.loginTextBox.Location = new System.Drawing.Point(109, 85);
+            this.loginTextBox.Location = new System.Drawing.Point(114, 107);
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(206, 20);
             this.loginTextBox.TabIndex = 2;
@@ -85,8 +86,9 @@ namespace CCS
             // 
             // passwordTextBox
             // 
+            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.passwordTextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.passwordTextBox.Location = new System.Drawing.Point(109, 111);
+            this.passwordTextBox.Location = new System.Drawing.Point(114, 133);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(206, 20);
             this.passwordTextBox.TabIndex = 3;
@@ -101,21 +103,20 @@ namespace CCS
             this.nameLabel.BackColor = System.Drawing.Color.Transparent;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameLabel.ForeColor = System.Drawing.Color.White;
-            this.nameLabel.Location = new System.Drawing.Point(29, 9);
+            this.nameLabel.Location = new System.Drawing.Point(19, 23);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(367, 38);
+            this.nameLabel.Size = new System.Drawing.Size(397, 38);
             this.nameLabel.TabIndex = 4;
             this.nameLabel.Text = "Система клімат-контролю";
             this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // wrongLabel
             // 
-            this.wrongLabel.AutoSize = true;
             this.wrongLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.wrongLabel.ForeColor = System.Drawing.Color.DimGray;
-            this.wrongLabel.Location = new System.Drawing.Point(55, 236);
+            this.wrongLabel.Location = new System.Drawing.Point(17, 259);
             this.wrongLabel.Name = "wrongLabel";
-            this.wrongLabel.Size = new System.Drawing.Size(317, 16);
+            this.wrongLabel.Size = new System.Drawing.Size(400, 16);
             this.wrongLabel.TabIndex = 5;
             this.wrongLabel.Text = "Ви ввели неправильний логін або пароль";
             this.wrongLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -126,7 +127,7 @@ namespace CCS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(424, 261);
+            this.ClientSize = new System.Drawing.Size(435, 284);
             this.Controls.Add(this.wrongLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.passwordTextBox);

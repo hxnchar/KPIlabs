@@ -50,15 +50,13 @@ namespace CCS
 
         private void loginTextBox_Click(object sender, EventArgs e)
         {
-            loginTextBox.SelectAll();
             if (loginTextBox.Text == "prettyEmail@gmail.com")
                 loginTextBox.Text = "";
         }
 
         private void passwordTextBox_Click(object sender, EventArgs e)
         {
-            passwordTextBox.SelectAll();
-            if (loginTextBox.Text == "prettyStrongPassword")
+            if (passwordTextBox.Text == "prettyStrongPassword")
                 passwordTextBox.Text = "";
         }
 
@@ -70,6 +68,7 @@ namespace CCS
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
         {
             passwordTextBox.ForeColor = ColorTranslator.FromHtml("#0D0D0D");
+            passwordTextBox.UseSystemPasswordChar = true;
         }
 
         private void CheckTextBox(TextBox textbox)
@@ -84,7 +83,11 @@ namespace CCS
             if (textbox.Text == "prettyEmail@gmail.com")
                 textbox.ForeColor = Color.DimGray;
             if (textbox.Text == "prettyStrongPassword")
+            {
                 textbox.ForeColor = Color.DimGray;
+                passwordTextBox.UseSystemPasswordChar = false;
+            }
+                
         }
 
         private void loginTextBox_Leave(object sender, EventArgs e)
@@ -95,6 +98,7 @@ namespace CCS
         private void passwordTextBox_Leave(object sender, EventArgs e)
         {
             CheckTextBox(passwordTextBox);
+            
         }
     }
 }

@@ -13,14 +13,16 @@ namespace CCS
         {
             string login = textBoxLogin.Text;
             string password = textBoxPassword.Text;
-            /*if (код)
-                авторизация ретурн тру
-            else*/
+            if (!login.Contains('@') || !login.Contains('.'))
             {
+                wrongDataLabel.Text = "Використовуйте email в якості логіну";
                 wrongDataLabel.Visible = true;
-                return false;
             }
-                
+            if (login == "nobodycares@gmail.com" && password == "TheStrongestPasswordYou'veEverSeen")
+                return true;
+            //open form
+            else
+                return false;
         }
     }
 }
