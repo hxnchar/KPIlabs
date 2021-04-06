@@ -43,7 +43,9 @@ namespace CCS
 
         private void buttonAuth_Click(object sender, EventArgs e)
         {
-            wrongLabel.Visible = true;
+            if (CCSMicrocontroller.Authorize(loginTextBox, passwordTextBox, wrongLabel))
+                buttonAuth.BackColor = Color.Blue;
+                /*открыть форму*/
         }
 
         private void loginTextBox_Click(object sender, EventArgs e)

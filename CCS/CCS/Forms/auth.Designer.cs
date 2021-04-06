@@ -60,7 +60,7 @@ namespace CCS
             this.forgotLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.forgotLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.forgotLabel.ForeColor = System.Drawing.Color.White;
-            this.forgotLabel.Location = new System.Drawing.Point(131, 194);
+            this.forgotLabel.Location = new System.Drawing.Point(131, 198);
             this.forgotLabel.Name = "forgotLabel";
             this.forgotLabel.Size = new System.Drawing.Size(151, 16);
             this.forgotLabel.TabIndex = 1;
@@ -112,8 +112,8 @@ namespace CCS
             // 
             this.wrongLabel.AutoSize = true;
             this.wrongLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.wrongLabel.ForeColor = System.Drawing.Color.Firebrick;
-            this.wrongLabel.Location = new System.Drawing.Point(55, 228);
+            this.wrongLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.wrongLabel.Location = new System.Drawing.Point(55, 236);
             this.wrongLabel.Name = "wrongLabel";
             this.wrongLabel.Size = new System.Drawing.Size(317, 16);
             this.wrongLabel.TabIndex = 5;
@@ -126,14 +126,17 @@ namespace CCS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(424, 253);
+            this.ClientSize = new System.Drawing.Size(424, 261);
             this.Controls.Add(this.wrongLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.loginTextBox);
             this.Controls.Add(this.forgotLabel);
             this.Controls.Add(this.buttonAuth);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "auth";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизація";
