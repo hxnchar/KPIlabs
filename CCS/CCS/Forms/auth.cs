@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace CCS
 {
-    public partial class Form1 : Form
+    public partial class auth : Form
     {
-        public Form1()
+        public auth()
         {
             InitializeComponent();
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
