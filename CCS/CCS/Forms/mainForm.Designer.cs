@@ -1,19 +1,14 @@
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace CCS
 {
     partial class MainForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        private IContainer components = null;
+        public Environment environment;
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -32,8 +27,8 @@ namespace CCS
         /// </summary>
         private void InitializeComponent()
         {
+            this.environment = new Environment();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.timer1 = new System.Timers.Timer();
             this.label1 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -63,10 +58,12 @@ namespace CCS
             this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Location = new System.Drawing.Point(239, 0);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            temperatureSeries.ChartArea = "ChartArea1";
+            temperatureSeries.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            temperatureSeries.Name = "Series1";
+            temperatureSeries.Color = Color.Firebrick;
+            temperatureSeries.BorderWidth = 3;
+            this.chart1.Series.Add(temperatureSeries);
             this.chart1.Size = new System.Drawing.Size(562, 453);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
