@@ -15,7 +15,6 @@ namespace CCS
         public auth()
         {
             InitializeComponent();
-            
         }
 
 
