@@ -73,12 +73,10 @@ namespace CCS.Forms
         private void selfActivateButton_CheckedChanged(object sender, EventArgs e)
         {
             autoBox.Visible = false;
-            selfBox.Visible = true;
         }
 
         private void autoActivateButton_CheckedChanged(object sender, EventArgs e)
         {
-            selfBox.Visible = false;
             autoBox.Visible = true;
         }
 
