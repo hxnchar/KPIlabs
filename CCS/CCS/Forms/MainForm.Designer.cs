@@ -1,4 +1,6 @@
 ﻿
+using System.Drawing;
+
 namespace CCS.Forms
 {
     partial class MainForm
@@ -82,12 +84,12 @@ namespace CCS.Forms
             // 
             // timeLabel
             // 
-            this.timeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.timeLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.timeLabel.ForeColor = System.Drawing.Color.White;
-            this.timeLabel.Location = new System.Drawing.Point(843, 4);
+            this.timeLabel.Location = new System.Drawing.Point(0, 0);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(142, 38);
+            this.timeLabel.Size = new System.Drawing.Size(990, 46);
             this.timeLabel.TabIndex = 0;
             this.timeLabel.Text = "10:37:02";
             this.timeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,19 +97,26 @@ namespace CCS.Forms
             // temperatureChart
             // 
             this.temperatureChart.BackColor = System.Drawing.Color.Transparent;
+            this.temperatureChart.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.temperatureChart.BackSecondaryColor = System.Drawing.Color.Transparent;
             this.temperatureChart.BorderlineColor = System.Drawing.Color.Transparent;
+            this.temperatureChart.BorderSkin.BackColor = System.Drawing.Color.Transparent;
+            this.temperatureChart.BorderSkin.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.temperatureChart.BorderSkin.BackSecondaryColor = System.Drawing.Color.Transparent;
+            this.temperatureChart.BorderSkin.BorderWidth = 0;
+            this.temperatureChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea1";
             this.temperatureChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.temperatureChart.Legends.Add(legend1);
-            this.temperatureChart.Location = new System.Drawing.Point(12, 12);
+            this.temperatureChart.Location = new System.Drawing.Point(448, 49);
             this.temperatureChart.Name = "temperatureChart";
             this.temperatureChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.temperatureChart.Series.Add(series1);
-            this.temperatureChart.Size = new System.Drawing.Size(530, 301);
+            this.temperatureChart.Size = new System.Drawing.Size(530, 264);
             this.temperatureChart.TabIndex = 1;
             this.temperatureChart.Text = "chart1";
             // 
@@ -116,7 +125,7 @@ namespace CCS.Forms
             this.selfActivateButton.AutoSize = true;
             this.selfActivateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.selfActivateButton.ForeColor = System.Drawing.Color.White;
-            this.selfActivateButton.Location = new System.Drawing.Point(638, 532);
+            this.selfActivateButton.Location = new System.Drawing.Point(121, 529);
             this.selfActivateButton.Name = "selfActivateButton";
             this.selfActivateButton.Size = new System.Drawing.Size(225, 24);
             this.selfActivateButton.TabIndex = 3;
@@ -130,7 +139,7 @@ namespace CCS.Forms
             this.autoActivateButton.Checked = true;
             this.autoActivateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.autoActivateButton.ForeColor = System.Drawing.Color.White;
-            this.autoActivateButton.Location = new System.Drawing.Point(638, 562);
+            this.autoActivateButton.Location = new System.Drawing.Point(121, 559);
             this.autoActivateButton.Name = "autoActivateButton";
             this.autoActivateButton.Size = new System.Drawing.Size(283, 24);
             this.autoActivateButton.TabIndex = 4;
@@ -141,13 +150,13 @@ namespace CCS.Forms
             // 
             // activateButton
             // 
-            this.activateButton.BackColor = System.Drawing.Color.Black;
+            this.activateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.activateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.activateButton.FlatAppearance.BorderSize = 0;
             this.activateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.activateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.activateButton.ForeColor = System.Drawing.Color.White;
-            this.activateButton.Location = new System.Drawing.Point(678, 592);
+            this.activateButton.Location = new System.Drawing.Point(161, 589);
             this.activateButton.Name = "activateButton";
             this.activateButton.Size = new System.Drawing.Size(176, 44);
             this.activateButton.TabIndex = 5;
@@ -157,14 +166,14 @@ namespace CCS.Forms
             // 
             // autoBox
             // 
+            this.autoBox.Controls.Add(this.label4);
             this.autoBox.Controls.Add(this.autoModeGroupBox);
             this.autoBox.Controls.Add(this.autoHumidityLabel);
             this.autoBox.Controls.Add(this.autoTemperatureLabel);
-            this.autoBox.Controls.Add(this.label4);
             this.autoBox.Controls.Add(this.label3);
             this.autoBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.autoBox.ForeColor = System.Drawing.Color.White;
-            this.autoBox.Location = new System.Drawing.Point(638, 331);
+            this.autoBox.Location = new System.Drawing.Point(121, 328);
             this.autoBox.Name = "autoBox";
             this.autoBox.Size = new System.Drawing.Size(256, 195);
             this.autoBox.TabIndex = 6;
@@ -276,7 +285,7 @@ namespace CCS.Forms
             this.selfBox.Controls.Add(this.selfTemperatureScrollBar1);
             this.selfBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.selfBox.ForeColor = System.Drawing.Color.White;
-            this.selfBox.Location = new System.Drawing.Point(638, 331);
+            this.selfBox.Location = new System.Drawing.Point(121, 328);
             this.selfBox.Name = "selfBox";
             this.selfBox.Size = new System.Drawing.Size(256, 195);
             this.selfBox.TabIndex = 7;
@@ -391,14 +400,14 @@ namespace CCS.Forms
             this.humidityChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.humidityChart.Legends.Add(legend2);
-            this.humidityChart.Location = new System.Drawing.Point(12, 332);
+            this.humidityChart.Location = new System.Drawing.Point(448, 369);
             this.humidityChart.Name = "humidityChart";
-            this.humidityChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            this.humidityChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.humidityChart.Series.Add(series2);
-            this.humidityChart.Size = new System.Drawing.Size(530, 301);
+            this.humidityChart.Size = new System.Drawing.Size(530, 264);
             this.humidityChart.TabIndex = 9;
             this.humidityChart.Text = "chart1";
             // 
@@ -406,7 +415,7 @@ namespace CCS.Forms
             // 
             this.greetingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.greetingsLabel.ForeColor = System.Drawing.Color.White;
-            this.greetingsLabel.Location = new System.Drawing.Point(548, 12);
+            this.greetingsLabel.Location = new System.Drawing.Point(12, 49);
             this.greetingsLabel.Name = "greetingsLabel";
             this.greetingsLabel.Size = new System.Drawing.Size(163, 30);
             this.greetingsLabel.TabIndex = 10;
@@ -417,7 +426,7 @@ namespace CCS.Forms
             // 
             this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateLabel.ForeColor = System.Drawing.Color.White;
-            this.dateLabel.Location = new System.Drawing.Point(548, 53);
+            this.dateLabel.Location = new System.Drawing.Point(12, 90);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(298, 30);
             this.dateLabel.TabIndex = 2;
@@ -428,7 +437,7 @@ namespace CCS.Forms
             // 
             this.stateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.stateLabel.ForeColor = System.Drawing.Color.White;
-            this.stateLabel.Location = new System.Drawing.Point(548, 97);
+            this.stateLabel.Location = new System.Drawing.Point(12, 134);
             this.stateLabel.Name = "stateLabel";
             this.stateLabel.Size = new System.Drawing.Size(437, 30);
             this.stateLabel.TabIndex = 11;

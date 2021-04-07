@@ -46,7 +46,6 @@ namespace CCS.Forms
             upgradeTemperatureButton.BackColor = ColorTranslator.FromHtml("#026873");
             downgradeHumidityButton.BackColor = ColorTranslator.FromHtml("#026873");
             upgradeHumidityButton.BackColor = ColorTranslator.FromHtml("#026873");
-            activateButton.BackColor = ColorTranslator.FromHtml("#026873");
             UpdateInfo();
             updateTimer.Start();
             gradientTimer.Start();
