@@ -8,5 +8,6 @@ namespace CCS
 {
     class HumidicatorController
     {
+        
     }
 }
