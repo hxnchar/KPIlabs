@@ -1,38 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace CCS.Forms
 {
     public partial class MainForm : Form
     {
-        (Color, Color) currentColor = (ColorTranslator.FromHtml("#348AC7"), ColorTranslator.FromHtml("#0396A6"));
-        bool gradientChanged = false;
-        GradientColors gc = GradientColors.green;
-
-        #region colors
-        readonly Color red = ColorTranslator.FromHtml("#e53935");
-        readonly Color orange = ColorTranslator.FromHtml("#e35d5b");
-        readonly Color green = ColorTranslator.FromHtml("#134E5E");
-        readonly Color lightGreen = ColorTranslator.FromHtml("#71B280");
-        readonly Color blue = ColorTranslator.FromHtml("#7474BF");
-        readonly Color lightBlue = ColorTranslator.FromHtml("#348AC7");
-        #endregion
-
-        enum GradientColors
-        {
-            blue, green, orange
-        }
-        int count = 0;
-        int k = -255;
 
         public MainForm()
         {
@@ -206,9 +179,7 @@ namespace CCS.Forms
                 stateLabel.Text = "Бажаєте увімкнути систему клімат-контролю?";
                 activateButton.BackColor = Color.FromArgb(60, Color.Black);
             }
-
-            /*if (autoCoolerRadioButton.Checked)
-                ChangeGradient(ColorTranslator.FromHtml("#00B4DB"), ColorTranslator.FromHtml("#0083B0"));*/
+            
         }
         #endregion
         private void timer2_Tick(object sender, EventArgs e)

@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using CCS.Forms;
 
 namespace CCS
 {
@@ -44,9 +39,9 @@ namespace CCS
         private void buttonAuth_Click(object sender, EventArgs e)
         {
 
-            if (CCSMicrocontroller.Authorize(loginTextBox, passwordTextBox, wrongLabel))
+            if (CCSMicrocontroller.CheckAutorization(loginTextBox, passwordTextBox, wrongLabel))
             {
-                Forms.MainForm mainForm = new Forms.MainForm();
+                MainForm mainForm = new MainForm();
                 mainForm.ShowDialog();
             }
         }
