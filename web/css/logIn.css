@@ -1,0 +1,48 @@
+
+.login {
+    height: 80%;
+    width:100%;
+    align-self: center;
+    justify-self: center;
+    font-size: 20px;
+    background-color: rgba(129, 129, 129, 0.329);
+}
+.div {
+    margin: 0 auto;
+    width: 500px;
+    height: 700px;
+    background-color: white; 
+    border-radius: 20px;
+    margin-top: 25px;
+    position: relative;
+}
+.div input {
+    display: block;
+    padding:10px;
+    margin: 10px auto;
+    border: 1px solid grey;
+    border-radius: 0.5em;
+    outline: none;
+}
+.div input:hover{
+    background-color: rgba(189, 189, 189, 0.76);
+}
+.div form{
+   padding-top: 200px;
+    
+}
+.div form img{
+    width: 100px;
+    position: absolute;
+    top:45px;
+    left:190px;
+}
+#sub{
+    background-color: #378ef0;
+    color: white;
+    font-size:18px;
+}
+#sub:hover{
+    background-color: #2b74c7;
+
+}
