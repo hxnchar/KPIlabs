@@ -42,10 +42,6 @@ namespace CCS.Forms
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.BackColor = ColorTranslator.FromHtml("#0396A6");
-            downgradeTemperatureButton.BackColor = ColorTranslator.FromHtml("#026873");
-            upgradeTemperatureButton.BackColor = ColorTranslator.FromHtml("#026873");
-            downgradeHumidityButton.BackColor = ColorTranslator.FromHtml("#026873");
-            upgradeHumidityButton.BackColor = ColorTranslator.FromHtml("#026873");
             UpdateInfo();
             updateTimer.Start();
             gradientTimer.Start();
