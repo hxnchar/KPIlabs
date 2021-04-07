@@ -33,10 +33,8 @@ namespace CCS.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
@@ -46,13 +44,13 @@ namespace CCS.Forms
             this.autoActivateButton = new System.Windows.Forms.RadioButton();
             this.activateButton = new System.Windows.Forms.Button();
             this.autoBox = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.autoModeGroupBox = new System.Windows.Forms.GroupBox();
             this.autoCoolerRadioButton = new System.Windows.Forms.RadioButton();
             this.autoNormalRadioButton = new System.Windows.Forms.RadioButton();
             this.autoWarmerRadioButton = new System.Windows.Forms.RadioButton();
             this.autoHumidityLabel = new System.Windows.Forms.Label();
             this.autoTemperatureLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.selfBox = new System.Windows.Forms.GroupBox();
             this.selfHumidityLabel = new System.Windows.Forms.Label();
@@ -105,8 +103,8 @@ namespace CCS.Forms
             this.temperatureChart.BorderSkin.BackSecondaryColor = System.Drawing.Color.Transparent;
             this.temperatureChart.BorderSkin.BorderWidth = 0;
             this.temperatureChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea1";
-            chartArea1.BackColor = Color.Transparent;
             this.temperatureChart.ChartAreas.Add(chartArea1);
             this.temperatureChart.Location = new System.Drawing.Point(448, 49);
             this.temperatureChart.Name = "temperatureChart";
@@ -171,13 +169,23 @@ namespace CCS.Forms
             this.autoBox.Controls.Add(this.label3);
             this.autoBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.autoBox.ForeColor = System.Drawing.Color.White;
-            this.autoBox.Location = new System.Drawing.Point(121, 328);
+            this.autoBox.Location = new System.Drawing.Point(0, 0);
             this.autoBox.Name = "autoBox";
             this.autoBox.Size = new System.Drawing.Size(256, 195);
             this.autoBox.TabIndex = 6;
             this.autoBox.TabStop = false;
             this.autoBox.Text = "Автоматична регуляція";
             this.autoBox.EnabledChanged += new System.EventHandler(this.autoBox_EnabledChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(5, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(174, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Поточна вологість:";
             // 
             // autoModeGroupBox
             // 
@@ -249,16 +257,6 @@ namespace CCS.Forms
             this.autoTemperatureLabel.TabIndex = 7;
             this.autoTemperatureLabel.Text = "15";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(5, 65);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(174, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Поточна вологість:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -271,6 +269,7 @@ namespace CCS.Forms
             // 
             // selfBox
             // 
+            this.selfBox.Controls.Add(this.autoBox);
             this.selfBox.Controls.Add(this.selfHumidityLabel);
             this.selfBox.Controls.Add(this.selfTemperatureLabel);
             this.selfBox.Controls.Add(this.upgradeHumidityButton);
@@ -312,13 +311,16 @@ namespace CCS.Forms
             // 
             // upgradeHumidityButton
             // 
+            this.upgradeHumidityButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.upgradeHumidityButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.upgradeHumidityButton.FlatAppearance.BorderSize = 0;
             this.upgradeHumidityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.upgradeHumidityButton.Location = new System.Drawing.Point(208, 155);
             this.upgradeHumidityButton.Name = "upgradeHumidityButton";
             this.upgradeHumidityButton.Size = new System.Drawing.Size(37, 30);
             this.upgradeHumidityButton.TabIndex = 15;
             this.upgradeHumidityButton.Text = "+1";
-            this.upgradeHumidityButton.UseVisualStyleBackColor = true;
+            this.upgradeHumidityButton.UseVisualStyleBackColor = false;
             this.upgradeHumidityButton.Click += new System.EventHandler(this.upgradeHumidityButton_Click);
             // 
             // label8
@@ -333,13 +335,16 @@ namespace CCS.Forms
             // 
             // downgradeHumidityButton
             // 
+            this.downgradeHumidityButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.downgradeHumidityButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.downgradeHumidityButton.FlatAppearance.BorderSize = 0;
             this.downgradeHumidityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.downgradeHumidityButton.Location = new System.Drawing.Point(11, 155);
             this.downgradeHumidityButton.Name = "downgradeHumidityButton";
             this.downgradeHumidityButton.Size = new System.Drawing.Size(37, 30);
             this.downgradeHumidityButton.TabIndex = 13;
             this.downgradeHumidityButton.Text = "-1";
-            this.downgradeHumidityButton.UseVisualStyleBackColor = true;
+            this.downgradeHumidityButton.UseVisualStyleBackColor = false;
             this.downgradeHumidityButton.Click += new System.EventHandler(this.downgradeHumidityButton_Click);
             // 
             // selfHumidityScrollBar2
@@ -352,13 +357,16 @@ namespace CCS.Forms
             // 
             // upgradeTemperatureButton
             // 
+            this.upgradeTemperatureButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.upgradeTemperatureButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.upgradeTemperatureButton.FlatAppearance.BorderSize = 0;
             this.upgradeTemperatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.upgradeTemperatureButton.Location = new System.Drawing.Point(209, 64);
             this.upgradeTemperatureButton.Name = "upgradeTemperatureButton";
             this.upgradeTemperatureButton.Size = new System.Drawing.Size(37, 30);
             this.upgradeTemperatureButton.TabIndex = 11;
             this.upgradeTemperatureButton.Text = "+1";
-            this.upgradeTemperatureButton.UseVisualStyleBackColor = true;
+            this.upgradeTemperatureButton.UseVisualStyleBackColor = false;
             this.upgradeTemperatureButton.Click += new System.EventHandler(this.upgradeTemperatureButton_Click);
             // 
             // label7
@@ -373,13 +381,16 @@ namespace CCS.Forms
             // 
             // downgradeTemperatureButton
             // 
+            this.downgradeTemperatureButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.downgradeTemperatureButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.downgradeTemperatureButton.FlatAppearance.BorderSize = 0;
             this.downgradeTemperatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.downgradeTemperatureButton.Location = new System.Drawing.Point(12, 64);
             this.downgradeTemperatureButton.Name = "downgradeTemperatureButton";
             this.downgradeTemperatureButton.Size = new System.Drawing.Size(37, 30);
             this.downgradeTemperatureButton.TabIndex = 5;
             this.downgradeTemperatureButton.Text = "-1";
-            this.downgradeTemperatureButton.UseVisualStyleBackColor = true;
+            this.downgradeTemperatureButton.UseVisualStyleBackColor = false;
             this.downgradeTemperatureButton.Click += new System.EventHandler(this.downgradeTemperatureButton_Click);
             // 
             // selfTemperatureScrollBar1
@@ -394,8 +405,8 @@ namespace CCS.Forms
             // 
             this.humidityChart.BackColor = System.Drawing.Color.Transparent;
             this.humidityChart.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea2.BackColor = System.Drawing.Color.Transparent;
             chartArea2.Name = "ChartArea1";
-            chartArea2.BackColor = Color.Transparent;
             this.humidityChart.ChartAreas.Add(chartArea2);
             this.humidityChart.Location = new System.Drawing.Point(448, 369);
             this.humidityChart.Name = "humidityChart";
@@ -451,7 +462,6 @@ namespace CCS.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(988, 643);
-            this.Controls.Add(this.autoBox);
             this.Controls.Add(this.autoActivateButton);
             this.Controls.Add(this.activateButton);
             this.Controls.Add(this.selfBox);
