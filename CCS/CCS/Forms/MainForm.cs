@@ -14,16 +14,17 @@ namespace CCS.Forms
 {
     public partial class MainForm : Form
     {
-        (Color, Color) currentColor = (Color.Black, Color.White);
+        (Color, Color) currentColor = (ColorTranslator.FromHtml("#348AC7"), ColorTranslator.FromHtml("#0396A6"));
         bool gradientChanged = false;
         GradientColors gc = GradientColors.green;
+
         #region colors
-        Color red = ColorTranslator.FromHtml("#cb2d3e");
-        Color orange = ColorTranslator.FromHtml("#ef473a");
-        Color green = ColorTranslator.FromHtml("#56ab2f");
-        Color lightGreen = ColorTranslator.FromHtml("#a8e063");
-        Color blue = ColorTranslator.FromHtml("#3a6073");
-        Color lightBlue = ColorTranslator.FromHtml("#3a7bd5");
+        readonly Color red = ColorTranslator.FromHtml("#e53935");
+        readonly Color orange = ColorTranslator.FromHtml("#e35d5b");
+        readonly Color green = ColorTranslator.FromHtml("#134E5E");
+        readonly Color lightGreen = ColorTranslator.FromHtml("#71B280");
+        readonly Color blue = ColorTranslator.FromHtml("#7474BF");
+        readonly Color lightBlue = ColorTranslator.FromHtml("#348AC7");
         #endregion
 
         enum GradientColors
@@ -47,8 +48,8 @@ namespace CCS.Forms
             upgradeHumidityButton.BackColor = ColorTranslator.FromHtml("#026873");
             activateButton.BackColor = ColorTranslator.FromHtml("#026873");
             UpdateInfo();
-            timer1.Start();
-            timer2.Start();
+            updateTimer.Start();
+            gradientTimer.Start();
         }
        
         private Color ChangeGradient(Color color1, Color color2, int k)
@@ -239,7 +240,6 @@ namespace CCS.Forms
             }
             if (k == 255)
             {
-                
                 k = -255;
             }
         }

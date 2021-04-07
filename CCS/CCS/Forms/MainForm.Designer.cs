@@ -37,7 +37,7 @@ namespace CCS.Forms
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.timeLabel = new System.Windows.Forms.Label();
             this.temperatureChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.selfActivateButton = new System.Windows.Forms.RadioButton();
@@ -67,7 +67,7 @@ namespace CCS.Forms
             this.greetingsLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.stateLabel = new System.Windows.Forms.Label();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.gradientTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.temperatureChart)).BeginInit();
             this.autoBox.SuspendLayout();
             this.autoModeGroupBox.SuspendLayout();
@@ -75,10 +75,10 @@ namespace CCS.Forms
             ((System.ComponentModel.ISupportInitialize)(this.humidityChart)).BeginInit();
             this.SuspendLayout();
             // 
-            // timer1
+            // updateTimer
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.updateTimer.Interval = 1000;
+            this.updateTimer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // timeLabel
             // 
@@ -94,12 +94,15 @@ namespace CCS.Forms
             // 
             // temperatureChart
             // 
+            this.temperatureChart.BackColor = System.Drawing.Color.Transparent;
+            this.temperatureChart.BorderlineColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea1";
             this.temperatureChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.temperatureChart.Legends.Add(legend1);
             this.temperatureChart.Location = new System.Drawing.Point(12, 12);
             this.temperatureChart.Name = "temperatureChart";
+            this.temperatureChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
@@ -382,12 +385,15 @@ namespace CCS.Forms
             // 
             // humidityChart
             // 
+            this.humidityChart.BackColor = System.Drawing.Color.Transparent;
+            this.humidityChart.BorderlineColor = System.Drawing.Color.Transparent;
             chartArea2.Name = "ChartArea1";
             this.humidityChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.humidityChart.Legends.Add(legend2);
             this.humidityChart.Location = new System.Drawing.Point(12, 332);
             this.humidityChart.Name = "humidityChart";
+            this.humidityChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
@@ -429,10 +435,10 @@ namespace CCS.Forms
             this.stateLabel.Text = "Бажаєте увімкнути систему клімат-контролю?";
             this.stateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // timer2
+            // gradientTimer
             // 
-            this.timer2.Interval = 5;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.gradientTimer.Interval = 30;
+            this.gradientTimer.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // MainForm
             // 
@@ -474,7 +480,7 @@ namespace CCS.Forms
 
         #endregion
 
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer updateTimer;
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.DataVisualization.Charting.Chart temperatureChart;
         private System.Windows.Forms.RadioButton selfActivateButton;
@@ -504,6 +510,6 @@ namespace CCS.Forms
         private System.Windows.Forms.Label greetingsLabel;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label stateLabel;
-        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer gradientTimer;
     }
 }
