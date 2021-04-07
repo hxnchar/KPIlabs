@@ -12,7 +12,7 @@ namespace CCS
 {
     public partial class auth : Form
     {
-        
+
         public auth()
         {
             InitializeComponent();
@@ -43,9 +43,12 @@ namespace CCS
 
         private void buttonAuth_Click(object sender, EventArgs e)
         {
+
             if (CCSMicrocontroller.Authorize(loginTextBox, passwordTextBox, wrongLabel))
-                buttonAuth.BackColor = Color.Blue;
-                /*открыть форму*/
+            {
+                Forms.MainForm mainForm = new Forms.MainForm();
+                mainForm.ShowDialog();
+            }
         }
 
         private void loginTextBox_Click(object sender, EventArgs e)
