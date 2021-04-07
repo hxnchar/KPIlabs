@@ -1,16 +1,19 @@
 using System;
 using System.Timers;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace CCS
 {
     public partial class MainForm : Form
     {
+        
         System.Windows.Forms.DataVisualization.Charting.Series temperatureSeries;
         private int counter = 0;
 
         public MainForm()
         {
+            Chart chart1 = new Chart();
             temperatureSeries = new System.Windows.Forms.DataVisualization.Charting.Series();
             InitializeComponent();
             environment.Temperature = 45;
