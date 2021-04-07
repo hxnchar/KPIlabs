@@ -42,6 +42,7 @@ namespace CCS.Forms
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.BackColor = ColorTranslator.FromHtml("#0396A6");
+            activateButton.BackColor = Color.FromArgb(60, Color.Black);
             UpdateInfo();
             updateTimer.Start();
             gradientTimer.Start();
@@ -197,13 +198,13 @@ namespace CCS.Forms
             if (++count % 2 == 1 || count == 1)
             {
                 stateLabel.Text = "Cистему клімат-контролю увімкнено.";
-                activateButton.BackColor = ColorTranslator.FromHtml("#025573");
+                activateButton.BackColor = Color.FromArgb(40, Color.Black);
             }
 
             else
             {
                 stateLabel.Text = "Бажаєте увімкнути систему клімат-контролю?";
-                activateButton.BackColor = ColorTranslator.FromHtml("#026873");
+                activateButton.BackColor = Color.FromArgb(60, Color.Black);
             }
 
             /*if (autoCoolerRadioButton.Checked)

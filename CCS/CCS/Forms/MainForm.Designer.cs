@@ -146,7 +146,7 @@ namespace CCS.Forms
             // 
             // activateButton
             // 
-            this.activateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.activateButton.BackColor = Color.FromArgb(60, Color.Black);
             this.activateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.activateButton.FlatAppearance.BorderSize = 0;
             this.activateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
