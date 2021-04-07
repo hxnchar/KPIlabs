@@ -30,12 +30,12 @@ namespace CCS.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timeLabel = new System.Windows.Forms.Label();
@@ -44,36 +44,33 @@ namespace CCS.Forms
             this.autoActivateButton = new System.Windows.Forms.RadioButton();
             this.activateButton = new System.Windows.Forms.Button();
             this.autoBox = new System.Windows.Forms.GroupBox();
-            this.selfBox = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.autoTemperatureLabel = new System.Windows.Forms.Label();
-            this.autoHumidityLabel = new System.Windows.Forms.Label();
             this.autoModeGroupBox = new System.Windows.Forms.GroupBox();
-            this.autoWarmerRadioButton = new System.Windows.Forms.RadioButton();
-            this.autoNormalRadioButton = new System.Windows.Forms.RadioButton();
             this.autoCoolerRadioButton = new System.Windows.Forms.RadioButton();
-            this.selfTemperatureScrollBar1 = new System.Windows.Forms.HScrollBar();
-            this.downgradeTemperatureButton = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.upgradeTemperatureButton = new System.Windows.Forms.Button();
+            this.autoNormalRadioButton = new System.Windows.Forms.RadioButton();
+            this.autoWarmerRadioButton = new System.Windows.Forms.RadioButton();
+            this.autoHumidityLabel = new System.Windows.Forms.Label();
+            this.autoTemperatureLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.selfBox = new System.Windows.Forms.GroupBox();
+            this.selfHumidityLabel = new System.Windows.Forms.Label();
+            this.selfTemperatureLabel = new System.Windows.Forms.Label();
             this.upgradeHumidityButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.downgradeHumidityButton = new System.Windows.Forms.Button();
             this.selfHumidityScrollBar2 = new System.Windows.Forms.HScrollBar();
-            this.selfHumidityLabel = new System.Windows.Forms.Label();
-            this.selfTemperatureLabel = new System.Windows.Forms.Label();
-            this.settingsGroupBox = new System.Windows.Forms.GroupBox();
+            this.upgradeTemperatureButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.downgradeTemperatureButton = new System.Windows.Forms.Button();
+            this.selfTemperatureScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.humidityChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label1 = new System.Windows.Forms.Label();
+            this.greetingsLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.stateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.temperatureChart)).BeginInit();
             this.autoBox.SuspendLayout();
-            this.selfBox.SuspendLayout();
             this.autoModeGroupBox.SuspendLayout();
-            this.settingsGroupBox.SuspendLayout();
+            this.selfBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.humidityChart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,16 +91,16 @@ namespace CCS.Forms
             // 
             // temperatureChart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.temperatureChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.temperatureChart.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.temperatureChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.temperatureChart.Legends.Add(legend1);
             this.temperatureChart.Location = new System.Drawing.Point(12, 12);
             this.temperatureChart.Name = "temperatureChart";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.temperatureChart.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.temperatureChart.Series.Add(series1);
             this.temperatureChart.Size = new System.Drawing.Size(530, 301);
             this.temperatureChart.TabIndex = 1;
             this.temperatureChart.Text = "chart1";
@@ -111,31 +108,35 @@ namespace CCS.Forms
             // selfActivateButton
             // 
             this.selfActivateButton.AutoSize = true;
+            this.selfActivateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.selfActivateButton.ForeColor = System.Drawing.Color.White;
-            this.selfActivateButton.Location = new System.Drawing.Point(10, 28);
+            this.selfActivateButton.Location = new System.Drawing.Point(567, 534);
             this.selfActivateButton.Name = "selfActivateButton";
-            this.selfActivateButton.Size = new System.Drawing.Size(116, 24);
+            this.selfActivateButton.Size = new System.Drawing.Size(225, 24);
             this.selfActivateButton.TabIndex = 3;
             this.selfActivateButton.TabStop = true;
-            this.selfActivateButton.Text = "Активувати";
+            this.selfActivateButton.Text = "Активувати ручний режим";
             this.selfActivateButton.UseVisualStyleBackColor = true;
+            this.selfActivateButton.CheckedChanged += new System.EventHandler(this.selfActivateButton_CheckedChanged);
             // 
             // autoActivateButton
             // 
             this.autoActivateButton.AutoSize = true;
+            this.autoActivateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.autoActivateButton.ForeColor = System.Drawing.Color.White;
-            this.autoActivateButton.Location = new System.Drawing.Point(6, 28);
+            this.autoActivateButton.Location = new System.Drawing.Point(567, 564);
             this.autoActivateButton.Name = "autoActivateButton";
-            this.autoActivateButton.Size = new System.Drawing.Size(116, 24);
+            this.autoActivateButton.Size = new System.Drawing.Size(283, 24);
             this.autoActivateButton.TabIndex = 4;
             this.autoActivateButton.TabStop = true;
-            this.autoActivateButton.Text = "Активувати";
+            this.autoActivateButton.Text = "Активувати автоматичний режим";
             this.autoActivateButton.UseVisualStyleBackColor = true;
+            this.autoActivateButton.CheckedChanged += new System.EventHandler(this.autoActivateButton_CheckedChanged);
             // 
             // activateButton
             // 
             this.activateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.activateButton.Location = new System.Drawing.Point(169, 262);
+            this.activateButton.Location = new System.Drawing.Point(595, 599);
             this.activateButton.Name = "activateButton";
             this.activateButton.Size = new System.Drawing.Size(201, 32);
             this.activateButton.TabIndex = 5;
@@ -150,75 +151,15 @@ namespace CCS.Forms
             this.autoBox.Controls.Add(this.autoTemperatureLabel);
             this.autoBox.Controls.Add(this.label4);
             this.autoBox.Controls.Add(this.label3);
-            this.autoBox.Controls.Add(this.autoActivateButton);
             this.autoBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.autoBox.ForeColor = System.Drawing.Color.White;
-            this.autoBox.Location = new System.Drawing.Point(268, 25);
+            this.autoBox.Location = new System.Drawing.Point(567, 331);
             this.autoBox.Name = "autoBox";
-            this.autoBox.Size = new System.Drawing.Size(256, 233);
+            this.autoBox.Size = new System.Drawing.Size(256, 195);
             this.autoBox.TabIndex = 6;
             this.autoBox.TabStop = false;
             this.autoBox.Text = "Автоматична регуляція";
-            // 
-            // selfBox
-            // 
-            this.selfBox.Controls.Add(this.selfHumidityLabel);
-            this.selfBox.Controls.Add(this.selfTemperatureLabel);
-            this.selfBox.Controls.Add(this.upgradeHumidityButton);
-            this.selfBox.Controls.Add(this.label8);
-            this.selfBox.Controls.Add(this.downgradeHumidityButton);
-            this.selfBox.Controls.Add(this.selfHumidityScrollBar2);
-            this.selfBox.Controls.Add(this.upgradeTemperatureButton);
-            this.selfBox.Controls.Add(this.label7);
-            this.selfBox.Controls.Add(this.downgradeTemperatureButton);
-            this.selfBox.Controls.Add(this.selfTemperatureScrollBar1);
-            this.selfBox.Controls.Add(this.selfActivateButton);
-            this.selfBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.selfBox.ForeColor = System.Drawing.Color.White;
-            this.selfBox.Location = new System.Drawing.Point(6, 25);
-            this.selfBox.Name = "selfBox";
-            this.selfBox.Size = new System.Drawing.Size(256, 233);
-            this.selfBox.TabIndex = 7;
-            this.selfBox.TabStop = false;
-            this.selfBox.Text = "Ручна регуляція";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(3, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(202, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Поточна температура:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(2, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(174, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Поточна вологість:";
-            // 
-            // autoTemperatureLabel
-            // 
-            this.autoTemperatureLabel.AutoSize = true;
-            this.autoTemperatureLabel.Location = new System.Drawing.Point(222, 99);
-            this.autoTemperatureLabel.Name = "autoTemperatureLabel";
-            this.autoTemperatureLabel.Size = new System.Drawing.Size(27, 20);
-            this.autoTemperatureLabel.TabIndex = 7;
-            this.autoTemperatureLabel.Text = "15";
-            // 
-            // autoHumidityLabel
-            // 
-            this.autoHumidityLabel.AutoSize = true;
-            this.autoHumidityLabel.Location = new System.Drawing.Point(222, 61);
-            this.autoHumidityLabel.Name = "autoHumidityLabel";
-            this.autoHumidityLabel.Size = new System.Drawing.Size(27, 20);
-            this.autoHumidityLabel.TabIndex = 8;
-            this.autoHumidityLabel.Text = "80";
+            this.autoBox.EnabledChanged += new System.EventHandler(this.autoBox_EnabledChanged);
             // 
             // autoModeGroupBox
             // 
@@ -226,36 +167,12 @@ namespace CCS.Forms
             this.autoModeGroupBox.Controls.Add(this.autoNormalRadioButton);
             this.autoModeGroupBox.Controls.Add(this.autoWarmerRadioButton);
             this.autoModeGroupBox.ForeColor = System.Drawing.Color.White;
-            this.autoModeGroupBox.Location = new System.Drawing.Point(7, 133);
+            this.autoModeGroupBox.Location = new System.Drawing.Point(8, 96);
             this.autoModeGroupBox.Name = "autoModeGroupBox";
             this.autoModeGroupBox.Size = new System.Drawing.Size(242, 93);
             this.autoModeGroupBox.TabIndex = 9;
             this.autoModeGroupBox.TabStop = false;
             this.autoModeGroupBox.Text = "Оберіть режим";
-            // 
-            // autoWarmerRadioButton
-            // 
-            this.autoWarmerRadioButton.AutoSize = true;
-            this.autoWarmerRadioButton.ForeColor = System.Drawing.Color.White;
-            this.autoWarmerRadioButton.Location = new System.Drawing.Point(6, 65);
-            this.autoWarmerRadioButton.Name = "autoWarmerRadioButton";
-            this.autoWarmerRadioButton.Size = new System.Drawing.Size(89, 24);
-            this.autoWarmerRadioButton.TabIndex = 4;
-            this.autoWarmerRadioButton.TabStop = true;
-            this.autoWarmerRadioButton.Text = "Тепліше";
-            this.autoWarmerRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // autoNormalRadioButton
-            // 
-            this.autoNormalRadioButton.AutoSize = true;
-            this.autoNormalRadioButton.ForeColor = System.Drawing.Color.White;
-            this.autoNormalRadioButton.Location = new System.Drawing.Point(6, 42);
-            this.autoNormalRadioButton.Name = "autoNormalRadioButton";
-            this.autoNormalRadioButton.Size = new System.Drawing.Size(103, 24);
-            this.autoNormalRadioButton.TabIndex = 5;
-            this.autoNormalRadioButton.TabStop = true;
-            this.autoNormalRadioButton.Text = "Середньо";
-            this.autoNormalRadioButton.UseVisualStyleBackColor = true;
             // 
             // autoCoolerRadioButton
             // 
@@ -269,47 +186,113 @@ namespace CCS.Forms
             this.autoCoolerRadioButton.Text = "Холодніше";
             this.autoCoolerRadioButton.UseVisualStyleBackColor = true;
             // 
-            // selfTemperatureScrollBar1
+            // autoNormalRadioButton
             // 
-            this.selfTemperatureScrollBar1.Location = new System.Drawing.Point(17, 95);
-            this.selfTemperatureScrollBar1.Name = "selfTemperatureScrollBar1";
-            this.selfTemperatureScrollBar1.Size = new System.Drawing.Size(211, 30);
-            this.selfTemperatureScrollBar1.TabIndex = 4;
+            this.autoNormalRadioButton.AutoSize = true;
+            this.autoNormalRadioButton.ForeColor = System.Drawing.Color.White;
+            this.autoNormalRadioButton.Location = new System.Drawing.Point(6, 42);
+            this.autoNormalRadioButton.Name = "autoNormalRadioButton";
+            this.autoNormalRadioButton.Size = new System.Drawing.Size(103, 24);
+            this.autoNormalRadioButton.TabIndex = 5;
+            this.autoNormalRadioButton.TabStop = true;
+            this.autoNormalRadioButton.Text = "Середньо";
+            this.autoNormalRadioButton.UseVisualStyleBackColor = true;
             // 
-            // downgradeTemperatureButton
+            // autoWarmerRadioButton
             // 
-            this.downgradeTemperatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.downgradeTemperatureButton.Location = new System.Drawing.Point(17, 95);
-            this.downgradeTemperatureButton.Name = "downgradeTemperatureButton";
-            this.downgradeTemperatureButton.Size = new System.Drawing.Size(37, 30);
-            this.downgradeTemperatureButton.TabIndex = 5;
-            this.downgradeTemperatureButton.Text = "-1";
-            this.downgradeTemperatureButton.UseVisualStyleBackColor = true;
+            this.autoWarmerRadioButton.AutoSize = true;
+            this.autoWarmerRadioButton.ForeColor = System.Drawing.Color.White;
+            this.autoWarmerRadioButton.Location = new System.Drawing.Point(6, 65);
+            this.autoWarmerRadioButton.Name = "autoWarmerRadioButton";
+            this.autoWarmerRadioButton.Size = new System.Drawing.Size(89, 24);
+            this.autoWarmerRadioButton.TabIndex = 4;
+            this.autoWarmerRadioButton.TabStop = true;
+            this.autoWarmerRadioButton.Text = "Тепліше";
+            this.autoWarmerRadioButton.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // autoHumidityLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(6, 61);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(222, 20);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Встановіть температуру:";
+            this.autoHumidityLabel.AutoSize = true;
+            this.autoHumidityLabel.Location = new System.Drawing.Point(225, 33);
+            this.autoHumidityLabel.Name = "autoHumidityLabel";
+            this.autoHumidityLabel.Size = new System.Drawing.Size(27, 20);
+            this.autoHumidityLabel.TabIndex = 8;
+            this.autoHumidityLabel.Text = "80";
             // 
-            // upgradeTemperatureButton
+            // autoTemperatureLabel
             // 
-            this.upgradeTemperatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.upgradeTemperatureButton.Location = new System.Drawing.Point(214, 95);
-            this.upgradeTemperatureButton.Name = "upgradeTemperatureButton";
-            this.upgradeTemperatureButton.Size = new System.Drawing.Size(37, 30);
-            this.upgradeTemperatureButton.TabIndex = 11;
-            this.upgradeTemperatureButton.Text = "+1";
-            this.upgradeTemperatureButton.UseVisualStyleBackColor = true;
+            this.autoTemperatureLabel.AutoSize = true;
+            this.autoTemperatureLabel.Location = new System.Drawing.Point(225, 64);
+            this.autoTemperatureLabel.Name = "autoTemperatureLabel";
+            this.autoTemperatureLabel.Size = new System.Drawing.Size(27, 20);
+            this.autoTemperatureLabel.TabIndex = 7;
+            this.autoTemperatureLabel.Text = "15";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(5, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(174, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Поточна вологість:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(5, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(202, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Поточна температура:";
+            // 
+            // selfBox
+            // 
+            this.selfBox.Controls.Add(this.selfHumidityLabel);
+            this.selfBox.Controls.Add(this.selfTemperatureLabel);
+            this.selfBox.Controls.Add(this.upgradeHumidityButton);
+            this.selfBox.Controls.Add(this.label8);
+            this.selfBox.Controls.Add(this.downgradeHumidityButton);
+            this.selfBox.Controls.Add(this.selfHumidityScrollBar2);
+            this.selfBox.Controls.Add(this.upgradeTemperatureButton);
+            this.selfBox.Controls.Add(this.label7);
+            this.selfBox.Controls.Add(this.downgradeTemperatureButton);
+            this.selfBox.Controls.Add(this.selfTemperatureScrollBar1);
+            this.selfBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.selfBox.ForeColor = System.Drawing.Color.White;
+            this.selfBox.Location = new System.Drawing.Point(567, 331);
+            this.selfBox.Name = "selfBox";
+            this.selfBox.Size = new System.Drawing.Size(256, 195);
+            this.selfBox.TabIndex = 7;
+            this.selfBox.TabStop = false;
+            this.selfBox.Text = "Ручна регуляція";
+            this.selfBox.EnabledChanged += new System.EventHandler(this.selfBox_EnabledChanged);
+            // 
+            // selfHumidityLabel
+            // 
+            this.selfHumidityLabel.AutoSize = true;
+            this.selfHumidityLabel.Location = new System.Drawing.Point(220, 117);
+            this.selfHumidityLabel.Name = "selfHumidityLabel";
+            this.selfHumidityLabel.Size = new System.Drawing.Size(27, 20);
+            this.selfHumidityLabel.TabIndex = 11;
+            this.selfHumidityLabel.Text = "80";
+            // 
+            // selfTemperatureLabel
+            // 
+            this.selfTemperatureLabel.AutoSize = true;
+            this.selfTemperatureLabel.BackColor = System.Drawing.Color.Transparent;
+            this.selfTemperatureLabel.Location = new System.Drawing.Point(220, 34);
+            this.selfTemperatureLabel.Name = "selfTemperatureLabel";
+            this.selfTemperatureLabel.Size = new System.Drawing.Size(27, 20);
+            this.selfTemperatureLabel.TabIndex = 10;
+            this.selfTemperatureLabel.Text = "15";
             // 
             // upgradeHumidityButton
             // 
             this.upgradeHumidityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.upgradeHumidityButton.Location = new System.Drawing.Point(214, 192);
+            this.upgradeHumidityButton.Location = new System.Drawing.Point(208, 155);
             this.upgradeHumidityButton.Name = "upgradeHumidityButton";
             this.upgradeHumidityButton.Size = new System.Drawing.Size(37, 30);
             this.upgradeHumidityButton.TabIndex = 15;
@@ -320,7 +303,7 @@ namespace CCS.Forms
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(13, 152);
+            this.label8.Location = new System.Drawing.Point(8, 117);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(196, 20);
             this.label8.TabIndex = 14;
@@ -329,7 +312,7 @@ namespace CCS.Forms
             // downgradeHumidityButton
             // 
             this.downgradeHumidityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.downgradeHumidityButton.Location = new System.Drawing.Point(17, 192);
+            this.downgradeHumidityButton.Location = new System.Drawing.Point(11, 155);
             this.downgradeHumidityButton.Name = "downgradeHumidityButton";
             this.downgradeHumidityButton.Size = new System.Drawing.Size(37, 30);
             this.downgradeHumidityButton.TabIndex = 13;
@@ -338,70 +321,76 @@ namespace CCS.Forms
             // 
             // selfHumidityScrollBar2
             // 
-            this.selfHumidityScrollBar2.Location = new System.Drawing.Point(17, 192);
+            this.selfHumidityScrollBar2.Location = new System.Drawing.Point(47, 155);
             this.selfHumidityScrollBar2.Name = "selfHumidityScrollBar2";
-            this.selfHumidityScrollBar2.Size = new System.Drawing.Size(211, 30);
+            this.selfHumidityScrollBar2.Size = new System.Drawing.Size(161, 30);
             this.selfHumidityScrollBar2.TabIndex = 12;
+            this.selfHumidityScrollBar2.Value = 50;
             // 
-            // selfHumidityLabel
+            // upgradeTemperatureButton
             // 
-            this.selfHumidityLabel.AutoSize = true;
-            this.selfHumidityLabel.Location = new System.Drawing.Point(225, 152);
-            this.selfHumidityLabel.Name = "selfHumidityLabel";
-            this.selfHumidityLabel.Size = new System.Drawing.Size(27, 20);
-            this.selfHumidityLabel.TabIndex = 11;
-            this.selfHumidityLabel.Text = "80";
+            this.upgradeTemperatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.upgradeTemperatureButton.Location = new System.Drawing.Point(209, 64);
+            this.upgradeTemperatureButton.Name = "upgradeTemperatureButton";
+            this.upgradeTemperatureButton.Size = new System.Drawing.Size(37, 30);
+            this.upgradeTemperatureButton.TabIndex = 11;
+            this.upgradeTemperatureButton.Text = "+1";
+            this.upgradeTemperatureButton.UseVisualStyleBackColor = true;
             // 
-            // selfTemperatureLabel
+            // label7
             // 
-            this.selfTemperatureLabel.AutoSize = true;
-            this.selfTemperatureLabel.BackColor = System.Drawing.Color.Transparent;
-            this.selfTemperatureLabel.Location = new System.Drawing.Point(225, 62);
-            this.selfTemperatureLabel.Name = "selfTemperatureLabel";
-            this.selfTemperatureLabel.Size = new System.Drawing.Size(27, 20);
-            this.selfTemperatureLabel.TabIndex = 10;
-            this.selfTemperatureLabel.Text = "15";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(1, 33);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(222, 20);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Встановіть температуру:";
             // 
-            // settingsGroupBox
+            // downgradeTemperatureButton
             // 
-            this.settingsGroupBox.Controls.Add(this.selfBox);
-            this.settingsGroupBox.Controls.Add(this.activateButton);
-            this.settingsGroupBox.Controls.Add(this.autoBox);
-            this.settingsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.settingsGroupBox.ForeColor = System.Drawing.Color.White;
-            this.settingsGroupBox.Location = new System.Drawing.Point(561, 332);
-            this.settingsGroupBox.Name = "settingsGroupBox";
-            this.settingsGroupBox.Size = new System.Drawing.Size(530, 301);
-            this.settingsGroupBox.TabIndex = 8;
-            this.settingsGroupBox.TabStop = false;
-            this.settingsGroupBox.Text = "Налаштування";
+            this.downgradeTemperatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.downgradeTemperatureButton.Location = new System.Drawing.Point(12, 64);
+            this.downgradeTemperatureButton.Name = "downgradeTemperatureButton";
+            this.downgradeTemperatureButton.Size = new System.Drawing.Size(37, 30);
+            this.downgradeTemperatureButton.TabIndex = 5;
+            this.downgradeTemperatureButton.Text = "-1";
+            this.downgradeTemperatureButton.UseVisualStyleBackColor = true;
+            // 
+            // selfTemperatureScrollBar1
+            // 
+            this.selfTemperatureScrollBar1.Location = new System.Drawing.Point(48, 64);
+            this.selfTemperatureScrollBar1.Name = "selfTemperatureScrollBar1";
+            this.selfTemperatureScrollBar1.Size = new System.Drawing.Size(161, 30);
+            this.selfTemperatureScrollBar1.TabIndex = 4;
+            this.selfTemperatureScrollBar1.Value = 50;
             // 
             // humidityChart
             // 
-            chartArea4.Name = "ChartArea1";
-            this.humidityChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.humidityChart.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.humidityChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.humidityChart.Legends.Add(legend2);
             this.humidityChart.Location = new System.Drawing.Point(12, 332);
             this.humidityChart.Name = "humidityChart";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.humidityChart.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.humidityChart.Series.Add(series2);
             this.humidityChart.Size = new System.Drawing.Size(530, 301);
             this.humidityChart.TabIndex = 9;
             this.humidityChart.Text = "chart1";
             // 
-            // label1
+            // greetingsLabel
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(563, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 30);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Доброго дня!";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.greetingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.greetingsLabel.ForeColor = System.Drawing.Color.White;
+            this.greetingsLabel.Location = new System.Drawing.Point(563, 12);
+            this.greetingsLabel.Name = "greetingsLabel";
+            this.greetingsLabel.Size = new System.Drawing.Size(163, 30);
+            this.greetingsLabel.TabIndex = 10;
+            this.greetingsLabel.Text = "Доброго ранку!";
+            this.greetingsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dateLabel
             // 
@@ -414,16 +403,16 @@ namespace CCS.Forms
             this.dateLabel.Text = "Сьогодні — вівторок, 06.04.2021";
             this.dateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // stateLabel
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(563, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(446, 30);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Бажаєте увімкнути систему клімат контролю?";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.stateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.stateLabel.ForeColor = System.Drawing.Color.White;
+            this.stateLabel.Location = new System.Drawing.Point(563, 97);
+            this.stateLabel.Name = "stateLabel";
+            this.stateLabel.Size = new System.Drawing.Size(446, 30);
+            this.stateLabel.TabIndex = 11;
+            this.stateLabel.Text = "Бажаєте увімкнути систему клімат-контролю?";
+            this.stateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MainForm
             // 
@@ -431,29 +420,35 @@ namespace CCS.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1103, 643);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.autoBox);
+            this.Controls.Add(this.autoActivateButton);
+            this.Controls.Add(this.activateButton);
+            this.Controls.Add(this.selfBox);
+            this.Controls.Add(this.stateLabel);
+            this.Controls.Add(this.greetingsLabel);
             this.Controls.Add(this.humidityChart);
-            this.Controls.Add(this.settingsGroupBox);
+            this.Controls.Add(this.selfActivateButton);
             this.Controls.Add(this.temperatureChart);
             this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.dateLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Система клімат-контролю";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.temperatureChart)).EndInit();
             this.autoBox.ResumeLayout(false);
             this.autoBox.PerformLayout();
-            this.selfBox.ResumeLayout(false);
-            this.selfBox.PerformLayout();
             this.autoModeGroupBox.ResumeLayout(false);
             this.autoModeGroupBox.PerformLayout();
-            this.settingsGroupBox.ResumeLayout(false);
+            this.selfBox.ResumeLayout(false);
+            this.selfBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.humidityChart)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -485,11 +480,9 @@ namespace CCS.Forms
         private System.Windows.Forms.HScrollBar selfTemperatureScrollBar1;
         private System.Windows.Forms.Label selfHumidityLabel;
         private System.Windows.Forms.Label selfTemperatureLabel;
-        private System.Windows.Forms.GroupBox settingsGroupBox;
         private System.Windows.Forms.DataVisualization.Charting.Chart humidityChart;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label greetingsLabel;
         private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label stateLabel;
     }
 }
