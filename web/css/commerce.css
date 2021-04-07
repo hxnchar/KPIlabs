@@ -1,0 +1,95 @@
+.commerce_part{
+    height:80%;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+   font-size: 20px;
+   background-color: #70707018;
+}
+
+.client_part {
+    width:500px;
+    border: 0.5px solid grey;
+    border-radius: 0.5em;
+    padding:10px;
+    background-color: white;
+}
+.client_part #emailInput{
+    margin: 10px 10px 10px 0;
+    padding:7px;
+    border:1px solid black;
+    border-radius: 7px;
+    outline: none;
+}
+.client_part #emailInput:hover{
+    background-color: rgba(189, 189, 189, 0.76);
+}
+.client_part #info{
+    font-size: 16px;
+    color:rgb(104, 99, 99);
+    width: 420px;
+    margin: 10px 0 25px 0;
+}
+.client_part #submit{
+    outline: none;
+    background-color: #378ef0;
+    color:white;
+    padding:10px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.client_part #submit:hover{
+    background-color: #2b74c7;
+    cursor: pointer;
+}
+.order{
+    margin-top: -110px;
+    width:400px;
+    height: 500px;
+    background-color: white;
+    border-radius: 7px;
+    padding: 20px;
+}
+.order p{
+    font-size: 28px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.order ul{
+    list-style: none;
+    border:0.5px solid grey;
+    padding: 5px 0 5px 25px;
+    border-radius: 0.5em;
+    list-style-image: url(../images/checkmark1.png);
+    
+}
+.order ul li{
+    margin: 5px;
+}
+.order #price{
+    display: inline-block;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.order #price i{
+    font-weight: 100;
+    font-size: 16px;
+    padding-left: 20px;
+}
+.order #cancel{
+    font-size: 18px;
+    
+}
+.order #cancel span{
+    
+    color:rgb(98, 137, 209)
+}
+.order #cancel a{
+    text-decoration: none;
+    margin-top: 2px;
+    float: right;
+}

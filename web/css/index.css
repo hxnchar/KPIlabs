@@ -1,0 +1,201 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border:0;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}
+.flex_box{
+    display:flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex;
+
+}
+.header{
+margin: 0 100px;
+height: 10%;
+position: relative;
+
+}
+.header .one{
+    width: 200px;
+    height:60%;
+    top:20%;
+    left:100px;
+    
+    position: absolute;
+}
+
+.one img{
+    height:100%;
+}
+
+@font-face {
+    font-family: Kiwi; /* Гарнитура шрифта */
+    src: url(fonts/KiwiMaru-Regular.ttf); /* Путь к файлу со шрифтом */
+   }
+.one p{
+    position: absolute;
+    margin-left: 70px;
+    top: 15%;
+    font-size: 30px;
+    font-family: Kiwi, 'Comic Sans MS', cursive;
+}
+.one p a{
+    text-decoration: none;
+    color: black;
+}
+
+.header .two{
+    width: 200px;
+    height:60%;
+    top:20%;
+    background: #e7e3e3;
+    position: absolute;
+    right:150px;
+    border-radius: 15px;
+
+}
+.header .two:hover{
+    background: #a5a1a1;
+}
+.two p{
+    position: absolute;
+    margin-left: 57px;
+    top: 15%;
+    font-size: 30px;
+    font-family: Kiwi, 'Comic Sans MS', cursive;
+}
+.two p a{
+    text-decoration: none;
+    color: black;
+}
+.header .three{
+    top:20%;
+    width: 140px;
+    height:60%;
+    position: absolute;
+    right:0px;
+    background: rgb(80, 243, 88);
+    border-radius: 15px;
+}
+.three p{
+    position: absolute;
+    margin-left: 23px;
+    top: 15%;
+    font-size: 30px;
+    font-family: Kiwi, 'Comic Sans MS', cursive;
+}
+.three p a{
+    text-decoration: none;
+    color: black;
+}
+.header .three:hover{
+    background:  rgb(40, 158, 46);;
+}
+.header .three:active{
+    background: rgb(80, 243, 88);
+    color:  rgb(0, 0, 0);
+}
+
+
+.main_part{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.text{
+    width: 37%;
+    position: absolute;
+    top: 29%;
+    left: 13%;
+
+}
+.text p{
+    font-family: Kiwi, 'Comic Sans MS', cursive;
+    font-size: 26px;
+    font-weight: 400;
+}
+.text ul{
+    
+    list-style-image: url(../images/checkmark1.png);
+    padding-top: 5px;
+}
+.text ul li{
+    font-family: Kiwi, 'Comic Sans MS', cursive;
+    font-size: 22px;
+    font-weight: 200;
+    padding-top: 15px;
+}
+.text button {
+
+    outline: none;
+    font-size: 20px;
+    background-color: #378ef0;
+    color:#e8f0ef;
+    padding:7px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+.text button a{
+    text-decoration: none;
+    color: #e8f0ef;
+}
+.text button:hover{
+    background-color: #2b74c7;
+}
+.text #moreInfo{
+    margin-left: 30px;
+    font-size: 16px;
+    background-color: #7790acb6;
+}
+.text #moreInfo:hover{
+    background-color: #7790acea;
+}
+.imgSKK{
+    align-self: flex-end;
+    position: absolute;
+    top: 130px;
+    right:30px;
+}
+.imgSKK img{
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5)
+}
+
+.contacts{
+    height:10%;
+    width: 100%;
+    align-self: flex-end;  
+    position: relative;  
+}
+.contacts #rights{
+    display: block;
+    margin: 70px 0 0 calc(50% - 200px);
+}
+/*height = 800 width=1550 => картинка залазит*/
+@media only screen and (min-width: 400px) {
+    .header .two,
+    .header .three {
+        display: none;
+    }
+
+    .main_part .imgSKK{
+        display: none;
+    }
+}
+@media only screen and (min-width: 1024px){
+    .header .two,
+        .header .three {
+            display: block;
+        }
+        .main_part .imgSKK{
+            display: block;
+        }
+}
