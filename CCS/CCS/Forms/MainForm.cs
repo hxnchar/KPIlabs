@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,12 +14,29 @@ namespace CCS.Forms
 {
     public partial class MainForm : Form
     {
+        (Color, Color) currentColor = (Color.Black, Color.White);
+        bool gradientChanged = false;
+        GradientColors gc = GradientColors.green;
+        #region colors
+        Color red = ColorTranslator.FromHtml("#cb2d3e");
+        Color orange = ColorTranslator.FromHtml("#ef473a");
+        Color green = ColorTranslator.FromHtml("#56ab2f");
+        Color lightGreen = ColorTranslator.FromHtml("#a8e063");
+        Color blue = ColorTranslator.FromHtml("#3a6073");
+        Color lightBlue = ColorTranslator.FromHtml("#3a7bd5");
+        #endregion
+
+        enum GradientColors
+        {
+            blue, green, orange
+        }
+        int count = 0;
+        int k = -255;
+
         public MainForm()
         {
             InitializeComponent();
         }
-
-        int count = 0;
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -29,9 +47,69 @@ namespace CCS.Forms
             upgradeHumidityButton.BackColor = ColorTranslator.FromHtml("#026873");
             activateButton.BackColor = ColorTranslator.FromHtml("#026873");
             UpdateInfo();
-            selfBox.Enabled = false;
-            autoBox.Enabled = false;
             timer1.Start();
+            timer2.Start();
+        }
+       
+        private Color ChangeGradient(Color color1, Color color2, int k)
+        {
+            if (k < 0)
+            {
+                k = 255 + k;
+                Color tempColor = color1;
+                color1 = color2;
+                color2 = tempColor;
+            }
+            int r1 = color1.R;
+            int r2 = color2.R;
+            int g1 = color1.G;
+            int g2 = color2.G;
+            int b1 = color1.B;
+            int b2 = color2.B;
+            Color output = Color.FromArgb((int)(r1 + (r2 - r1) * k / 255f), (int)(g1 + (g2 - g1) * k / 255f), (int)(b1 + (b2 - b1) * k / 255f));
+            return output;
+        }
+        #region trash
+        private void selfActivateButton_CheckedChanged(object sender, EventArgs e)
+        {
+            autoBox.Visible = false;
+            selfBox.Visible = true;
+        }
+
+        private void autoActivateButton_CheckedChanged(object sender, EventArgs e)
+        {
+            selfBox.Visible = false;
+            autoBox.Visible = true;
+        }
+
+        private void selfBox_EnabledChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void downgradeTemperatureButton_Click(object sender, EventArgs e)
+        {
+            /*necessaryTemperature--;*/
+        }
+
+        private void upgradeHumidityButton_Click(object sender, EventArgs e)
+        {
+           /*necessaryHumidity++;*/
+        }
+
+        private void downgradeHumidityButton_Click(object sender, EventArgs e)
+        {
+            /*necessaryHumidity--;*/
+        }
+
+        private void autoBox_EnabledChanged(object sender, EventArgs e)
+        {
+            autoBox.ForeColor = Color.White;
+        }
+
+        private void upgradeTemperatureButton_Click(object sender, EventArgs e)
+        {
+            /*necessaryTemperature++;*/
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -115,11 +193,16 @@ namespace CCS.Forms
             dateLabel.Text = $"Сьогодні — {GetDayOfTheWeek()}, {GetDate()}.";
         }
 
+        private void IntToLabel(Label label, int num)
+        {
+            label.Text = num.ToString();
+        }
+
         private void activateButton_Click(object sender, EventArgs e)
         {
             if (++count % 2 == 1 || count == 1)
             {
-                stateLabel.Text = "Cистему клімат-контролю увімкнено";
+                stateLabel.Text = "Cистему клімат-контролю увімкнено.";
                 activateButton.BackColor = ColorTranslator.FromHtml("#025573");
             }
 
@@ -128,29 +211,62 @@ namespace CCS.Forms
                 stateLabel.Text = "Бажаєте увімкнути систему клімат-контролю?";
                 activateButton.BackColor = ColorTranslator.FromHtml("#026873");
             }
+
+            /*if (autoCoolerRadioButton.Checked)
+                ChangeGradient(ColorTranslator.FromHtml("#00B4DB"), ColorTranslator.FromHtml("#0083B0"));*/
+        }
+        #endregion
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            this.BackColor = ChangeGradient(currentColor.Item1, currentColor.Item2, k++);
+            if (gradientChanged && k == 0)
+            {
+                switch (gc)
+                {
+                    case GradientColors.blue:
+                        currentColor = (lightBlue, blue);
+                        break;
+                    case GradientColors.green:
+                        currentColor = (lightGreen, green);
+                        break;
+                    case GradientColors.orange:
+                        currentColor = (orange, red);
+                        break;
+                    default:
+                        break;
+                }
+                gradientChanged = false;
+            }
+            if (k == 255)
+            {
                 
+                k = -255;
+            }
         }
 
-        private void selfActivateButton_CheckedChanged(object sender, EventArgs e)
+        private void autoCoolerRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            autoBox.Enabled = false;
-            selfBox.Enabled = true;
+            gc = GradientColors.blue;
+            gradientChanged = true;
+            k = -255;
+            currentColor = (lightBlue, this.BackColor);
+
         }
 
-        private void autoActivateButton_CheckedChanged(object sender, EventArgs e)
+        private void autoNormalRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            selfBox.Enabled = false;
-            autoBox.Enabled = true;
+            gc = GradientColors.green;
+            gradientChanged = true;
+            k = -255;
+            currentColor = (lightGreen, this.BackColor);
         }
 
-        private void selfBox_EnabledChanged(object sender, EventArgs e)
+        private void autoWarmerRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            
-        }
-
-        private void autoBox_EnabledChanged(object sender, EventArgs e)
-        {
-            autoBox.ForeColor = Color.White;
+            gc = GradientColors.orange;
+            gradientChanged = true;
+            k = -255;
+            currentColor = (orange, this.BackColor);
         }
     }
 }

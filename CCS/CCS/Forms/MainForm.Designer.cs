@@ -67,6 +67,7 @@ namespace CCS.Forms
             this.greetingsLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.stateLabel = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.temperatureChart)).BeginInit();
             this.autoBox.SuspendLayout();
             this.autoModeGroupBox.SuspendLayout();
@@ -76,15 +77,17 @@ namespace CCS.Forms
             // 
             // timer1
             // 
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // timeLabel
             // 
-            this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.timeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.timeLabel.ForeColor = System.Drawing.Color.White;
-            this.timeLabel.Location = new System.Drawing.Point(867, 12);
+            this.timeLabel.Location = new System.Drawing.Point(843, 4);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(224, 71);
+            this.timeLabel.Size = new System.Drawing.Size(142, 38);
             this.timeLabel.TabIndex = 0;
             this.timeLabel.Text = "10:37:02";
             this.timeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,11 +113,10 @@ namespace CCS.Forms
             this.selfActivateButton.AutoSize = true;
             this.selfActivateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.selfActivateButton.ForeColor = System.Drawing.Color.White;
-            this.selfActivateButton.Location = new System.Drawing.Point(567, 534);
+            this.selfActivateButton.Location = new System.Drawing.Point(638, 532);
             this.selfActivateButton.Name = "selfActivateButton";
             this.selfActivateButton.Size = new System.Drawing.Size(225, 24);
             this.selfActivateButton.TabIndex = 3;
-            this.selfActivateButton.TabStop = true;
             this.selfActivateButton.Text = "Активувати ручний режим";
             this.selfActivateButton.UseVisualStyleBackColor = true;
             this.selfActivateButton.CheckedChanged += new System.EventHandler(this.selfActivateButton_CheckedChanged);
@@ -122,9 +124,10 @@ namespace CCS.Forms
             // autoActivateButton
             // 
             this.autoActivateButton.AutoSize = true;
+            this.autoActivateButton.Checked = true;
             this.autoActivateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.autoActivateButton.ForeColor = System.Drawing.Color.White;
-            this.autoActivateButton.Location = new System.Drawing.Point(567, 564);
+            this.autoActivateButton.Location = new System.Drawing.Point(638, 562);
             this.autoActivateButton.Name = "autoActivateButton";
             this.autoActivateButton.Size = new System.Drawing.Size(283, 24);
             this.autoActivateButton.TabIndex = 4;
@@ -135,13 +138,18 @@ namespace CCS.Forms
             // 
             // activateButton
             // 
+            this.activateButton.BackColor = System.Drawing.Color.Black;
+            this.activateButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.activateButton.FlatAppearance.BorderSize = 0;
             this.activateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.activateButton.Location = new System.Drawing.Point(595, 599);
+            this.activateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.activateButton.ForeColor = System.Drawing.Color.White;
+            this.activateButton.Location = new System.Drawing.Point(678, 592);
             this.activateButton.Name = "activateButton";
-            this.activateButton.Size = new System.Drawing.Size(201, 32);
+            this.activateButton.Size = new System.Drawing.Size(176, 44);
             this.activateButton.TabIndex = 5;
             this.activateButton.Text = "Увімкнути систему";
-            this.activateButton.UseVisualStyleBackColor = true;
+            this.activateButton.UseVisualStyleBackColor = false;
             this.activateButton.Click += new System.EventHandler(this.activateButton_Click);
             // 
             // autoBox
@@ -153,7 +161,7 @@ namespace CCS.Forms
             this.autoBox.Controls.Add(this.label3);
             this.autoBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.autoBox.ForeColor = System.Drawing.Color.White;
-            this.autoBox.Location = new System.Drawing.Point(567, 331);
+            this.autoBox.Location = new System.Drawing.Point(638, 331);
             this.autoBox.Name = "autoBox";
             this.autoBox.Size = new System.Drawing.Size(256, 195);
             this.autoBox.TabIndex = 6;
@@ -185,6 +193,7 @@ namespace CCS.Forms
             this.autoCoolerRadioButton.TabStop = true;
             this.autoCoolerRadioButton.Text = "Холодніше";
             this.autoCoolerRadioButton.UseVisualStyleBackColor = true;
+            this.autoCoolerRadioButton.CheckedChanged += new System.EventHandler(this.autoCoolerRadioButton_CheckedChanged);
             // 
             // autoNormalRadioButton
             // 
@@ -197,6 +206,7 @@ namespace CCS.Forms
             this.autoNormalRadioButton.TabStop = true;
             this.autoNormalRadioButton.Text = "Середньо";
             this.autoNormalRadioButton.UseVisualStyleBackColor = true;
+            this.autoNormalRadioButton.CheckedChanged += new System.EventHandler(this.autoNormalRadioButton_CheckedChanged);
             // 
             // autoWarmerRadioButton
             // 
@@ -209,11 +219,12 @@ namespace CCS.Forms
             this.autoWarmerRadioButton.TabStop = true;
             this.autoWarmerRadioButton.Text = "Тепліше";
             this.autoWarmerRadioButton.UseVisualStyleBackColor = true;
+            this.autoWarmerRadioButton.CheckedChanged += new System.EventHandler(this.autoWarmerRadioButton_CheckedChanged);
             // 
             // autoHumidityLabel
             // 
             this.autoHumidityLabel.AutoSize = true;
-            this.autoHumidityLabel.Location = new System.Drawing.Point(225, 33);
+            this.autoHumidityLabel.Location = new System.Drawing.Point(220, 69);
             this.autoHumidityLabel.Name = "autoHumidityLabel";
             this.autoHumidityLabel.Size = new System.Drawing.Size(27, 20);
             this.autoHumidityLabel.TabIndex = 8;
@@ -222,7 +233,7 @@ namespace CCS.Forms
             // autoTemperatureLabel
             // 
             this.autoTemperatureLabel.AutoSize = true;
-            this.autoTemperatureLabel.Location = new System.Drawing.Point(225, 64);
+            this.autoTemperatureLabel.Location = new System.Drawing.Point(218, 34);
             this.autoTemperatureLabel.Name = "autoTemperatureLabel";
             this.autoTemperatureLabel.Size = new System.Drawing.Size(27, 20);
             this.autoTemperatureLabel.TabIndex = 7;
@@ -262,7 +273,7 @@ namespace CCS.Forms
             this.selfBox.Controls.Add(this.selfTemperatureScrollBar1);
             this.selfBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.selfBox.ForeColor = System.Drawing.Color.White;
-            this.selfBox.Location = new System.Drawing.Point(567, 331);
+            this.selfBox.Location = new System.Drawing.Point(638, 331);
             this.selfBox.Name = "selfBox";
             this.selfBox.Size = new System.Drawing.Size(256, 195);
             this.selfBox.TabIndex = 7;
@@ -298,6 +309,7 @@ namespace CCS.Forms
             this.upgradeHumidityButton.TabIndex = 15;
             this.upgradeHumidityButton.Text = "+1";
             this.upgradeHumidityButton.UseVisualStyleBackColor = true;
+            this.upgradeHumidityButton.Click += new System.EventHandler(this.upgradeHumidityButton_Click);
             // 
             // label8
             // 
@@ -318,6 +330,7 @@ namespace CCS.Forms
             this.downgradeHumidityButton.TabIndex = 13;
             this.downgradeHumidityButton.Text = "-1";
             this.downgradeHumidityButton.UseVisualStyleBackColor = true;
+            this.downgradeHumidityButton.Click += new System.EventHandler(this.downgradeHumidityButton_Click);
             // 
             // selfHumidityScrollBar2
             // 
@@ -336,6 +349,7 @@ namespace CCS.Forms
             this.upgradeTemperatureButton.TabIndex = 11;
             this.upgradeTemperatureButton.Text = "+1";
             this.upgradeTemperatureButton.UseVisualStyleBackColor = true;
+            this.upgradeTemperatureButton.Click += new System.EventHandler(this.upgradeTemperatureButton_Click);
             // 
             // label7
             // 
@@ -356,6 +370,7 @@ namespace CCS.Forms
             this.downgradeTemperatureButton.TabIndex = 5;
             this.downgradeTemperatureButton.Text = "-1";
             this.downgradeTemperatureButton.UseVisualStyleBackColor = true;
+            this.downgradeTemperatureButton.Click += new System.EventHandler(this.downgradeTemperatureButton_Click);
             // 
             // selfTemperatureScrollBar1
             // 
@@ -385,7 +400,7 @@ namespace CCS.Forms
             // 
             this.greetingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.greetingsLabel.ForeColor = System.Drawing.Color.White;
-            this.greetingsLabel.Location = new System.Drawing.Point(563, 12);
+            this.greetingsLabel.Location = new System.Drawing.Point(548, 12);
             this.greetingsLabel.Name = "greetingsLabel";
             this.greetingsLabel.Size = new System.Drawing.Size(163, 30);
             this.greetingsLabel.TabIndex = 10;
@@ -396,7 +411,7 @@ namespace CCS.Forms
             // 
             this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateLabel.ForeColor = System.Drawing.Color.White;
-            this.dateLabel.Location = new System.Drawing.Point(563, 53);
+            this.dateLabel.Location = new System.Drawing.Point(548, 53);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(298, 30);
             this.dateLabel.TabIndex = 2;
@@ -407,19 +422,24 @@ namespace CCS.Forms
             // 
             this.stateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.stateLabel.ForeColor = System.Drawing.Color.White;
-            this.stateLabel.Location = new System.Drawing.Point(563, 97);
+            this.stateLabel.Location = new System.Drawing.Point(548, 97);
             this.stateLabel.Name = "stateLabel";
-            this.stateLabel.Size = new System.Drawing.Size(446, 30);
+            this.stateLabel.Size = new System.Drawing.Size(437, 30);
             this.stateLabel.TabIndex = 11;
             this.stateLabel.Text = "Бажаєте увімкнути систему клімат-контролю?";
             this.stateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 5;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1103, 643);
+            this.ClientSize = new System.Drawing.Size(988, 643);
             this.Controls.Add(this.autoBox);
             this.Controls.Add(this.autoActivateButton);
             this.Controls.Add(this.activateButton);
@@ -484,5 +504,6 @@ namespace CCS.Forms
         private System.Windows.Forms.Label greetingsLabel;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label stateLabel;
+        private System.Windows.Forms.Timer timer2;
     }
 }
