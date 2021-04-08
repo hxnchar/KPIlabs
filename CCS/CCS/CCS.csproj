@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>LogoX512.ico</ApplicationIcon>
+    <ApplicationIcon>updaterLogo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -85,6 +85,7 @@
   <ItemGroup>
     <Compile Include="Classes\CCSMicrocontroller.cs" />
     <Compile Include="Classes\ConditionerController.cs" />
+    <Compile Include="Classes\Environment.cs" />
     <Compile Include="Forms\auth.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LogoX512.ico" />
+    <Content Include="updaterLogo.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
