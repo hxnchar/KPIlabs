@@ -60,7 +60,13 @@ namespace CCS.Forms
 
         private void downgradeTemperatureButton_Click(object sender, EventArgs e)
         {
-            _environment.TempState = Environment.State.Decrease;
+            if (selfTemperatureScrollBar.Value-1 > selfTemperatureScrollBar.Minimum)
+            {
+                selfTemperatureScrollBar.Value--;
+                Microcontroller.Temperature = selfTemperatureScrollBar.Value;
+                selfTemperatureLabel.Text = selfTemperatureScrollBar.Value.ToString();
+            }
+            
         }
 
         private void upgradeHumidityButton_Click(object sender, EventArgs e)
@@ -80,7 +86,12 @@ namespace CCS.Forms
 
         private void upgradeTemperatureButton_Click(object sender, EventArgs e)
         {
-            _environment.TempState = Environment.State.Increase;
+            if (selfTemperatureScrollBar.Value + 1 < selfTemperatureScrollBar.Maximum)
+            {
+                selfTemperatureScrollBar.Value++;
+                Microcontroller.Temperature = selfTemperatureScrollBar.Value;
+                selfTemperatureLabel.Text = selfTemperatureScrollBar.Value.ToString();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -242,12 +253,13 @@ namespace CCS.Forms
 
         private void selfTemperatureScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
-
+            Microcontroller.Temperature = selfTemperatureScrollBar.Value;
+            selfTemperatureLabel.Text = selfTemperatureScrollBar.Value.ToString();
         }
 
         private void selfHumidityScrollBar_Scroll(object sender, ScrollEventArgs e)
         {
-
+            
         }
     }
 }
