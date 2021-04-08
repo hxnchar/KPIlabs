@@ -94,7 +94,6 @@ namespace CCS.Forms
                 Microcontroller.Temperature = selfTemperatureScrollBar.Value;
                 selfTemperatureLabel.Text = selfTemperatureScrollBar.Value.ToString();
             }
-            //CheckSafeness(Microcontroller.Temperature);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -108,6 +107,8 @@ namespace CCS.Forms
             temperatureChart.Series[0].Points.AddY(Microcontroller.CurrentTemperature());
             autoTemperatureLabel.Text = Microcontroller.CurrentTemperature().ToString();
             //autoHumidityLabel.Text = Microcontroller.CurrentHumidity().ToString();
+            //CheckSafeness(Microcontroller.CurrentTemperature(), Microcontroller.CurrentHumidity());
+            
         }
 
         private string GetFormattedNum(int num)
@@ -262,7 +263,7 @@ namespace CCS.Forms
         {
             Microcontroller.Temperature = selfTemperatureScrollBar.Value;
             selfTemperatureLabel.Text = selfTemperatureScrollBar.Value.ToString();
-            //CheckSafeness(Microcontroller.Temperature);
+
         }
 
         private void selfHumidityScrollBar_Scroll(object sender, ScrollEventArgs e)
@@ -270,10 +271,21 @@ namespace CCS.Forms
             
         }
 
-        private int CheckSafeness(int temperature)
+        private void CheckSafeness(int temperature, int humidity = 0)
         {
-            return 1;
-            //return temperature > 50 ? temperature : 50;
+            if (temperature > 35)
+            {
+                DialogResult dr = MessageBox.Show("Ви ввели занадто високу температуру. Змінити режим на автоматичний?", "Попередження", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    autoActivateButton.Checked = true;
+                }
+            }
+        }
+
+        private void selfTemperatureScrollBar_ValueChanged(object sender, EventArgs e)
+        {
+            CheckSafeness(Microcontroller.CurrentTemperature());
         }
     }
 }
