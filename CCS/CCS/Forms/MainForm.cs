@@ -19,6 +19,7 @@ namespace CCS.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            temperatureChart.ForeColor = Color.White;
             this.BackColor = ColorTranslator.FromHtml("#0396A6");
             activateButton.BackColor = Color.FromArgb(60, Color.Black);
             UpdateInfo();
