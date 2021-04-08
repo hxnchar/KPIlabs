@@ -1,5 +1,6 @@
 ﻿
 using System.Drawing;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace CCS.Forms
 {
@@ -130,6 +131,9 @@ namespace CCS.Forms
             this.temperatureChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
             series1.Name = "Series1";
+            series1.ChartType = SeriesChartType.Line;
+            series1.BorderWidth = 3;
+            series1.Color = Color.White;
             this.temperatureChart.Series.Add(series1);
             this.temperatureChart.Size = new System.Drawing.Size(530, 264);
             this.temperatureChart.TabIndex = 1;

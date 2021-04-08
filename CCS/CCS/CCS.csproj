@@ -85,6 +85,7 @@
   <ItemGroup>
     <Compile Include="Classes\CCSMicrocontroller.cs" />
     <Compile Include="Classes\ConditionerController.cs" />
+    <Compile Include="Classes\Environment.cs" />
     <Compile Include="Forms\auth.cs">
       <SubType>Form</SubType>
     </Compile>

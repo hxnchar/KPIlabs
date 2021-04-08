@@ -6,11 +6,26 @@ namespace CCS
     {
         private int minTemperature;
         private int maxTemperature;
-        private int currentTemperature { get; }
+        private int currentTemperature;
         private int currentHumidity { get; }
         private int Humidity { get; }
-        private int Temperture { get; }
-        
+        public int Temperature;
+        private Sensors _sensors;
+        private Environment environment;
+        private ConditionerController cc;
+
+        public int CurrentTemperature()
+        {
+            currentTemperature = _sensors.ReadTemperature();
+            return currentTemperature;
+        }
+
+        public CCSMicrocontroller(Environment environment)
+        {
+            this.environment = environment;
+            _sensors = new Sensors(environment);
+            cc = new ConditionerController(environment);
+        }
 
         public static bool CheckAutorization(TextBox textBoxLogin, TextBox textBoxPassword, Label wrongDataLabel)
         {
@@ -32,7 +47,17 @@ namespace CCS
             return false;*/
             return true;
         }
-        
-        
+
+        public void AutoControl()
+        {
+            
+        }
+
+        public void ManualControl()
+        {
+            if (CurrentTemperature() < Temperature) cc.Heat();
+            else if (currentTemperature == Temperature) cc.Off();
+            else if (currentTemperature > Temperature) cc.Cool();
+        }
     }
 }

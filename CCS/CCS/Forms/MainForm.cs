@@ -6,10 +6,14 @@ namespace CCS.Forms
 {
     public partial class MainForm : Form
     {
-
+        private CCSMicrocontroller Microcontroller;
+        private Environment _environment;
+        
         public MainForm()
         {
             InitializeComponent();
+            _environment = new Environment();
+            Microcontroller = new CCSMicrocontroller(_environment);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -57,12 +61,12 @@ namespace CCS.Forms
 
         private void downgradeTemperatureButton_Click(object sender, EventArgs e)
         {
-            /*necessaryTemperature--;*/
+            _environment.TempState = Environment.State.Decrease;
         }
 
         private void upgradeHumidityButton_Click(object sender, EventArgs e)
         {
-           /*necessaryHumidity++;*/
+            
         }
 
         private void downgradeHumidityButton_Click(object sender, EventArgs e)
@@ -77,7 +81,7 @@ namespace CCS.Forms
 
         private void upgradeTemperatureButton_Click(object sender, EventArgs e)
         {
-            /*necessaryTemperature++;*/
+            _environment.TempState = Environment.State.Increase;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -87,6 +91,9 @@ namespace CCS.Forms
             {
                 UpdateInfo();
             }
+            Microcontroller.ManualControl();
+            temperatureChart.Series[0].Points.AddY(Microcontroller.CurrentTemperature());
+
         }
 
         private string GetFormattedNum(int num)
