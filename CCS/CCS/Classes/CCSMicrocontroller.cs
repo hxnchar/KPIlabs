@@ -22,6 +22,7 @@ namespace CCS
 
         public CCSMicrocontroller(Environment environment)
         {
+            Temperature = environment.DefaultTemperature;
             this.environment = environment;
             _sensors = new Sensors(environment);
             cc = new ConditionerController(environment);
@@ -47,13 +48,8 @@ namespace CCS
             return false;*/
             return true;
         }
-
-        public void AutoControl()
-        {
-            
-        }
-
-        public void ManualControl()
+        
+        public void Control()
         {
             if (CurrentTemperature() < Temperature) cc.Heat();
             else if (currentTemperature == Temperature) cc.Off();

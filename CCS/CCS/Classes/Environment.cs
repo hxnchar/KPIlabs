@@ -4,7 +4,7 @@ namespace CCS
 {
     public class Environment
     {
-        public int Temperature = 30;
+        public int Temperature = 20;
         public int Humidity;
         public int DefaultTemperature = 20;
         public int DefaultHumidity;

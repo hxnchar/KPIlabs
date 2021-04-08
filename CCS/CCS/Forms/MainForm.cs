@@ -104,9 +104,10 @@ namespace CCS.Forms
             {
                 UpdateInfo();
             }
-            Microcontroller.ManualControl();
+            Microcontroller.Control();
             temperatureChart.Series[0].Points.AddY(Microcontroller.CurrentTemperature());
-
+            autoTemperatureLabel.Text = Microcontroller.CurrentTemperature().ToString();
+            //autoHumidityLabel.Text = Microcontroller.CurrentHumidity().ToString();
         }
 
         private string GetFormattedNum(int num)
@@ -231,6 +232,7 @@ namespace CCS.Forms
 
         private void autoCoolerRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            Microcontroller.Temperature = 18;
             gc = GradientColors.blue;
             gradientChanged = true;
             k = -255;
@@ -240,6 +242,7 @@ namespace CCS.Forms
 
         private void autoNormalRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            Microcontroller.Temperature = 22;
             gc = GradientColors.green;
             gradientChanged = true;
             k = -255;
@@ -248,6 +251,7 @@ namespace CCS.Forms
 
         private void autoWarmerRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            Microcontroller.Temperature = 26;
             gc = GradientColors.orange;
             gradientChanged = true;
             k = -255;
