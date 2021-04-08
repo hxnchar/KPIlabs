@@ -8,7 +8,6 @@ namespace CCS.Forms
     {
         private CCSMicrocontroller Microcontroller;
         private Environment _environment;
-        
         public MainForm()
         {
             InitializeComponent();
@@ -239,6 +238,16 @@ namespace CCS.Forms
             gradientChanged = true;
             k = -255;
             currentColor = (orange, this.BackColor);
+        }
+
+        private void selfTemperatureScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void selfHumidityScrollBar_Scroll(object sender, ScrollEventArgs e)
+        {
+
         }
     }
 }

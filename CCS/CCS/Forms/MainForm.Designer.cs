@@ -78,11 +78,11 @@ namespace CCS.Forms
             this.upgradeHumidityButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.downgradeHumidityButton = new System.Windows.Forms.Button();
-            this.selfHumidityScrollBar2 = new System.Windows.Forms.HScrollBar();
+            this.selfHumidityScrollBar = new System.Windows.Forms.HScrollBar();
             this.upgradeTemperatureButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.downgradeTemperatureButton = new System.Windows.Forms.Button();
-            this.selfTemperatureScrollBar1 = new System.Windows.Forms.HScrollBar();
+            this.selfTemperatureScrollBar = new System.Windows.Forms.HScrollBar();
             this.humidityChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.greetingsLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
@@ -129,11 +129,11 @@ namespace CCS.Forms
             this.temperatureChart.Location = new System.Drawing.Point(448, 49);
             this.temperatureChart.Name = "temperatureChart";
             this.temperatureChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.Name = "Series1";
-            series1.ChartType = SeriesChartType.Line;
             series1.BorderWidth = 3;
-            series1.Color = Color.White;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.White;
+            series1.Name = "Series1";
             this.temperatureChart.Series.Add(series1);
             this.temperatureChart.Size = new System.Drawing.Size(530, 264);
             this.temperatureChart.TabIndex = 1;
@@ -169,7 +169,7 @@ namespace CCS.Forms
             // 
             // activateButton
             // 
-            this.activateButton.BackColor = Color.FromArgb(60, Color.Black);
+            this.activateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.activateButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.activateButton.FlatAppearance.BorderSize = 0;
             this.activateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -192,7 +192,7 @@ namespace CCS.Forms
             this.autoBox.Controls.Add(this.label3);
             this.autoBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.autoBox.ForeColor = System.Drawing.Color.White;
-            this.autoBox.Location = new System.Drawing.Point(0, 0);
+            this.autoBox.Location = new System.Drawing.Point(258, 118);
             this.autoBox.Name = "autoBox";
             this.autoBox.Size = new System.Drawing.Size(256, 195);
             this.autoBox.TabIndex = 6;
@@ -292,17 +292,16 @@ namespace CCS.Forms
             // 
             // selfBox
             // 
-            this.selfBox.Controls.Add(this.autoBox);
             this.selfBox.Controls.Add(this.selfHumidityLabel);
             this.selfBox.Controls.Add(this.selfTemperatureLabel);
             this.selfBox.Controls.Add(this.upgradeHumidityButton);
             this.selfBox.Controls.Add(this.label8);
             this.selfBox.Controls.Add(this.downgradeHumidityButton);
-            this.selfBox.Controls.Add(this.selfHumidityScrollBar2);
+            this.selfBox.Controls.Add(this.selfHumidityScrollBar);
             this.selfBox.Controls.Add(this.upgradeTemperatureButton);
             this.selfBox.Controls.Add(this.label7);
             this.selfBox.Controls.Add(this.downgradeTemperatureButton);
-            this.selfBox.Controls.Add(this.selfTemperatureScrollBar1);
+            this.selfBox.Controls.Add(this.selfTemperatureScrollBar);
             this.selfBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.selfBox.ForeColor = System.Drawing.Color.White;
             this.selfBox.Location = new System.Drawing.Point(121, 328);
@@ -370,13 +369,14 @@ namespace CCS.Forms
             this.downgradeHumidityButton.UseVisualStyleBackColor = false;
             this.downgradeHumidityButton.Click += new System.EventHandler(this.downgradeHumidityButton_Click);
             // 
-            // selfHumidityScrollBar2
+            // selfHumidityScrollBar
             // 
-            this.selfHumidityScrollBar2.Location = new System.Drawing.Point(47, 155);
-            this.selfHumidityScrollBar2.Name = "selfHumidityScrollBar2";
-            this.selfHumidityScrollBar2.Size = new System.Drawing.Size(161, 30);
-            this.selfHumidityScrollBar2.TabIndex = 12;
-            this.selfHumidityScrollBar2.Value = 50;
+            this.selfHumidityScrollBar.Location = new System.Drawing.Point(32, 155);
+            this.selfHumidityScrollBar.Name = "selfHumidityScrollBar";
+            this.selfHumidityScrollBar.Size = new System.Drawing.Size(192, 30);
+            this.selfHumidityScrollBar.TabIndex = 12;
+            this.selfHumidityScrollBar.Value = 80;
+            this.selfHumidityScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.selfHumidityScrollBar_Scroll);
             // 
             // upgradeTemperatureButton
             // 
@@ -416,13 +416,14 @@ namespace CCS.Forms
             this.downgradeTemperatureButton.UseVisualStyleBackColor = false;
             this.downgradeTemperatureButton.Click += new System.EventHandler(this.downgradeTemperatureButton_Click);
             // 
-            // selfTemperatureScrollBar1
+            // selfTemperatureScrollBar
             // 
-            this.selfTemperatureScrollBar1.Location = new System.Drawing.Point(48, 64);
-            this.selfTemperatureScrollBar1.Name = "selfTemperatureScrollBar1";
-            this.selfTemperatureScrollBar1.Size = new System.Drawing.Size(161, 30);
-            this.selfTemperatureScrollBar1.TabIndex = 4;
-            this.selfTemperatureScrollBar1.Value = 50;
+            this.selfTemperatureScrollBar.Location = new System.Drawing.Point(32, 64);
+            this.selfTemperatureScrollBar.Name = "selfTemperatureScrollBar";
+            this.selfTemperatureScrollBar.Size = new System.Drawing.Size(193, 30);
+            this.selfTemperatureScrollBar.TabIndex = 4;
+            this.selfTemperatureScrollBar.Value = 15;
+            this.selfTemperatureScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.selfTemperatureScrollBar1_Scroll);
             // 
             // humidityChart
             // 
@@ -485,6 +486,7 @@ namespace CCS.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(988, 643);
+            this.Controls.Add(this.autoBox);
             this.Controls.Add(this.autoActivateButton);
             this.Controls.Add(this.activateButton);
             this.Controls.Add(this.selfBox);
@@ -537,11 +539,11 @@ namespace CCS.Forms
         private System.Windows.Forms.Button upgradeHumidityButton;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button downgradeHumidityButton;
-        private System.Windows.Forms.HScrollBar selfHumidityScrollBar2;
+        private System.Windows.Forms.HScrollBar selfHumidityScrollBar;
         private System.Windows.Forms.Button upgradeTemperatureButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button downgradeTemperatureButton;
-        private System.Windows.Forms.HScrollBar selfTemperatureScrollBar1;
+        private System.Windows.Forms.HScrollBar selfTemperatureScrollBar;
         private System.Windows.Forms.Label selfHumidityLabel;
         private System.Windows.Forms.Label selfTemperatureLabel;
         private System.Windows.Forms.DataVisualization.Charting.Chart humidityChart;
