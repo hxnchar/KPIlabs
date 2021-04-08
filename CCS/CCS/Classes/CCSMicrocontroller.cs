@@ -1,15 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace CCS
 {
     class CCSMicrocontroller
     {
-        public static bool Authorize(TextBox textBoxLogin, TextBox textBoxPassword, Label wrongDataLabel)
+        private int minTemperature;
+        private int maxTemperature;
+        private int currentTemperature { get; }
+        private int currentHumidity { get; }
+        private int Humidity { get; }
+        private int Temperture { get; }
+        
+
+        public static bool CheckAutorization(TextBox textBoxLogin, TextBox textBoxPassword, Label wrongDataLabel)
         {
             string login = textBoxLogin.Text;
             string password = textBoxPassword.Text;
@@ -29,5 +32,7 @@ namespace CCS
             return false;*/
             return true;
         }
+        
+        
     }
 }
