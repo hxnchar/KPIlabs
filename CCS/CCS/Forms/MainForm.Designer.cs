@@ -192,7 +192,7 @@ namespace CCS.Forms
             this.autoBox.Controls.Add(this.label3);
             this.autoBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.autoBox.ForeColor = System.Drawing.Color.White;
-            this.autoBox.Location = new System.Drawing.Point(258, 118);
+            this.autoBox.Location = new System.Drawing.Point(153, 60);
             this.autoBox.Name = "autoBox";
             this.autoBox.Size = new System.Drawing.Size(256, 195);
             this.autoBox.TabIndex = 6;
@@ -372,10 +372,12 @@ namespace CCS.Forms
             // selfHumidityScrollBar
             // 
             this.selfHumidityScrollBar.Location = new System.Drawing.Point(32, 155);
+            this.selfHumidityScrollBar.Maximum = 95;
+            this.selfHumidityScrollBar.Minimum = 30;
             this.selfHumidityScrollBar.Name = "selfHumidityScrollBar";
             this.selfHumidityScrollBar.Size = new System.Drawing.Size(192, 30);
             this.selfHumidityScrollBar.TabIndex = 12;
-            this.selfHumidityScrollBar.Value = 80;
+            this.selfHumidityScrollBar.Value = 75;
             this.selfHumidityScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.selfHumidityScrollBar_Scroll);
             // 
             // upgradeTemperatureButton
@@ -419,10 +421,12 @@ namespace CCS.Forms
             // selfTemperatureScrollBar
             // 
             this.selfTemperatureScrollBar.Location = new System.Drawing.Point(32, 64);
+            this.selfTemperatureScrollBar.Maximum = 59;
+            this.selfTemperatureScrollBar.Minimum = 10;
             this.selfTemperatureScrollBar.Name = "selfTemperatureScrollBar";
             this.selfTemperatureScrollBar.Size = new System.Drawing.Size(193, 30);
             this.selfTemperatureScrollBar.TabIndex = 4;
-            this.selfTemperatureScrollBar.Value = 15;
+            this.selfTemperatureScrollBar.Value = 25;
             this.selfTemperatureScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.selfTemperatureScrollBar1_Scroll);
             // 
             // humidityChart

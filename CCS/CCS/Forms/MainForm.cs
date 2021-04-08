@@ -6,6 +6,8 @@ namespace CCS.Forms
 {
     public partial class MainForm : Form
     {
+        bool notificated = false;
+
         private CCSMicrocontroller Microcontroller;
         private Environment _environment;
         public MainForm()
@@ -92,6 +94,7 @@ namespace CCS.Forms
                 Microcontroller.Temperature = selfTemperatureScrollBar.Value;
                 selfTemperatureLabel.Text = selfTemperatureScrollBar.Value.ToString();
             }
+            //CheckSafeness(Microcontroller.Temperature);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -255,11 +258,18 @@ namespace CCS.Forms
         {
             Microcontroller.Temperature = selfTemperatureScrollBar.Value;
             selfTemperatureLabel.Text = selfTemperatureScrollBar.Value.ToString();
+            //CheckSafeness(Microcontroller.Temperature);
         }
 
         private void selfHumidityScrollBar_Scroll(object sender, ScrollEventArgs e)
         {
             
+        }
+
+        private int CheckSafeness(int temperature)
+        {
+            return 1;
+            //return temperature > 50 ? temperature : 50;
         }
     }
 }
