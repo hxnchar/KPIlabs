@@ -7,25 +7,35 @@ namespace CCS
         private int minTemperature;
         private int maxTemperature;
         private int currentTemperature;
-        private int currentHumidity { get; }
-        private int Humidity { get; }
+        private int currentHumidity;
+        public bool enabled;
+        public int Humidity;
         public int Temperature;
         private Sensors _sensors;
         private Environment environment;
         private ConditionerController cc;
+        private HumidicatorController hc;
 
         public int CurrentTemperature()
         {
             currentTemperature = _sensors.ReadTemperature();
             return currentTemperature;
         }
+        
+        public int CurrentHumidity()
+        {
+            currentHumidity = _sensors.ReadHumidity();
+            return currentHumidity;
+        }
 
         public CCSMicrocontroller(Environment environment)
         {
             Temperature = environment.DefaultTemperature;
+            Humidity = environment.DefaultHumidity;
             this.environment = environment;
             _sensors = new Sensors(environment);
             cc = new ConditionerController(environment);
+            hc = new HumidicatorController(environment);
         }
 
         public static bool CheckAutorization(TextBox textBoxLogin, TextBox textBoxPassword, Label wrongDataLabel)
@@ -51,9 +61,20 @@ namespace CCS
         
         public void Control()
         {
-            if (CurrentTemperature() < Temperature) cc.Heat();
-            else if (currentTemperature == Temperature) cc.Off();
-            else if (currentTemperature > Temperature) cc.Cool();
+            if (enabled)
+            {
+                if (CurrentTemperature() < Temperature) cc.Heat();
+                else if (currentTemperature == Temperature) cc.Off();
+                else if (currentTemperature > Temperature) cc.Cool();
+                if (CurrentHumidity() < Humidity) hc.IncreaseHumidity();
+                else if (currentHumidity == Humidity) hc.Off();
+                else if (currentHumidity > Humidity) hc.DecreaseHumidity();
+            }
+            else
+            {
+                cc.Off();
+                hc.Off();
+            }
         }
     }
 }

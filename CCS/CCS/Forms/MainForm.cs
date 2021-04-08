@@ -73,12 +73,22 @@ namespace CCS.Forms
 
         private void upgradeHumidityButton_Click(object sender, EventArgs e)
         {
-            
+            if (selfHumidityScrollBar.Value+1 < selfHumidityScrollBar.Minimum)
+            {
+                selfHumidityScrollBar.Value++;
+                Microcontroller.Humidity = selfHumidityScrollBar.Value;
+                selfHumidityLabel.Text = selfHumidityScrollBar.Value.ToString();
+            }
         }
 
         private void downgradeHumidityButton_Click(object sender, EventArgs e)
         {
-            /*necessaryHumidity--;*/
+            if (selfHumidityScrollBar.Value-1 > selfHumidityScrollBar.Minimum)
+            {
+                selfHumidityScrollBar.Value--;
+                Microcontroller.Humidity = selfHumidityScrollBar.Value;
+                selfHumidityLabel.Text = selfHumidityScrollBar.Value.ToString();
+            }
         }
 
         private void autoBox_EnabledChanged(object sender, EventArgs e)
@@ -105,10 +115,9 @@ namespace CCS.Forms
             }
             Microcontroller.Control();
             temperatureChart.Series[0].Points.AddY(Microcontroller.CurrentTemperature());
+            humidityChart.Series[0].Points.AddY(Microcontroller.CurrentHumidity());
             autoTemperatureLabel.Text = Microcontroller.CurrentTemperature().ToString();
-            //autoHumidityLabel.Text = Microcontroller.CurrentHumidity().ToString();
-            //CheckSafeness(Microcontroller.CurrentTemperature(), Microcontroller.CurrentHumidity());
-            
+            autoHumidityLabel.Text = Microcontroller.CurrentHumidity().ToString();
         }
 
         private string GetFormattedNum(int num)
@@ -190,17 +199,21 @@ namespace CCS.Forms
 
         private void activateButton_Click(object sender, EventArgs e)
         {
-            if (++count % 2 == 1 || count == 1)
+            Microcontroller.enabled = !Microcontroller.enabled;
+            if (Microcontroller.enabled)
             {
                 stateLabel.Text = "Cистему клімат-контролю увімкнено.";
-                activateButton.BackColor = Color.FromArgb(40, Color.Black);
+                activateButton.Text = "Вимкнути систему";
+                activateButton.BackColor = Color.FromArgb(60, Color.Black);
             }
-
             else
             {
                 stateLabel.Text = "Бажаєте увімкнути систему клімат-контролю?";
-                activateButton.BackColor = Color.FromArgb(60, Color.Black);
+                activateButton.Text = "Увімкнути систему";
+                activateButton.BackColor = Color.FromArgb(40, Color.Black);
             }
+            
+            
             
         }
         #endregion
@@ -234,6 +247,7 @@ namespace CCS.Forms
         private void autoCoolerRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             Microcontroller.Temperature = 18;
+            Microcontroller.Humidity = 55;
             gc = GradientColors.blue;
             gradientChanged = true;
             k = -255;
@@ -244,6 +258,7 @@ namespace CCS.Forms
         private void autoNormalRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             Microcontroller.Temperature = 22;
+            Microcontroller.Humidity = 60;
             gc = GradientColors.green;
             gradientChanged = true;
             k = -255;
@@ -253,6 +268,7 @@ namespace CCS.Forms
         private void autoWarmerRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             Microcontroller.Temperature = 26;
+            Microcontroller.Humidity = 65;
             gc = GradientColors.orange;
             gradientChanged = true;
             k = -255;
@@ -268,7 +284,8 @@ namespace CCS.Forms
 
         private void selfHumidityScrollBar_Scroll(object sender, ScrollEventArgs e)
         {
-            
+            Microcontroller.Humidity = selfHumidityScrollBar.Value;
+            selfHumidityLabel.Text = selfHumidityScrollBar.Value.ToString();
         }
 
         private void CheckSafeness(int temperature, int humidity = 0)

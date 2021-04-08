@@ -20,6 +20,10 @@ namespace CCS
             return _environment.Temperature;
         }
 
-        public int ReadHumidity() => _environment.Humidity;
+        public int ReadHumidity()
+        {
+            _environment.UpdateHumidity();
+            return _environment.Humidity;
+        }
     }
 }

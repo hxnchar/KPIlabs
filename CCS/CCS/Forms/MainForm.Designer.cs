@@ -442,6 +442,9 @@ namespace CCS.Forms
             this.humidityChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             series2.ChartArea = "ChartArea1";
             series2.Name = "Series1";
+            series2.ChartType = SeriesChartType.Line;
+            series2.BorderWidth = 3;
+            series2.Color = Color.White;
             this.humidityChart.Series.Add(series2);
             this.humidityChart.Size = new System.Drawing.Size(530, 264);
             this.humidityChart.TabIndex = 9;
