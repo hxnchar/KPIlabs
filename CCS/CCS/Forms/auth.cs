@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using CCS.Forms;
@@ -23,7 +24,7 @@ namespace CCS
 
         private void forgotLabel_Click(object sender, EventArgs e)
         {
-
+            Process.Start(new ProcessStartInfo("https://t.me/hxnchar"));
         }
 
         private void forgotLabel_MouseHover(object sender, EventArgs e)
