@@ -3,11 +3,14 @@
     margin: 0;
     padding: 0;
     border:0;
+    
 }
 body{
     height: 100vh;
     width: 100vw;
+    
 }
+
 .flex_box{
     display:flex;
     height: 100%;
@@ -26,7 +29,7 @@ position: relative;
     height:60%;
     top:20%;
     left:100px;
-    
+    transition: all 0.3s ease;
     position: absolute;
 }
 
@@ -58,6 +61,7 @@ position: relative;
     position: absolute;
     right:150px;
     border-radius: 15px;
+    transition: all 0.3s ease;
 
 }
 .header .two:hover{
@@ -76,6 +80,7 @@ position: relative;
 }
 .header .three{
     top:20%;
+    transition: all 0.3s ease;
     width: 140px;
     height:60%;
     position: absolute;
@@ -134,7 +139,7 @@ position: relative;
     padding-top: 15px;
 }
 .text button {
-
+    transition: all 0.3s ease;
     outline: none;
     font-size: 20px;
     background-color: #378ef0;
@@ -168,7 +173,10 @@ position: relative;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5)
 }
-
+button{
+    outline: none;
+    cursor: pointer;
+}
 .contacts{
     height:10%;
     width: 100%;

@@ -40,8 +40,6 @@
                 require('PHPMailerAutoload.php');
                 
                 $mail = new PHPMailer();
-                $mail->CharSet = 'UTF-8';
-                $mail->Encoding = 'base64';
                 $mail->IsSMTP();
                 $mail->Mailer = "smtp";
                 
@@ -58,9 +56,7 @@
                 $mail->SetFrom("pasha.vass1488@gmail.com", "SKK inc");
                 $mail->AddReplyTo("pasha.vass1488@gmail.com", "SKK inc");
                 $mail->Subject = "SKK Order -- success!";
-             $text = "<h1 align=center> Покупка успешна! </h1><br><p>Спасибо за покупку!<br>Ваш логин:".$_POST["email"]."<br>Ваш пароль:".$password."<br><br><hr><br><p>Ни в коем случае не потеряйте свой логин и пароль! Востановить будет очень тяжело!<br> Также немедленно проверьте логин и пароль на подлинность, авторизируйтесь на сайте.</p></p>";
-                $content =$text;
-
+                $content = "<h1 align=center> Покупка успешна! </h1><br><p>Спасибо за покупку!<br>Ваш логин:".$_POST["email"]."<br>Ваш пароль:".$password."<br><br><hr><br><p>Ни в коем случае не потеряйте свой логин и пароль! Востановить будет очень тяжело!<br> Также немедленно проверьте логин и пароль на подлинность, авторизируйтесь на сайте.</p></p>";
                 
                 $mail->Body=$content; 
                 if(!$mail->Send()) {
@@ -84,6 +80,10 @@
                     <input type="checkbox" id="checkbox">Связываться со мной по электронной почте<br>
                     <input type="submit" value="Перейти к оплате" id="submit">
                 </form>
+                <br>
+                <a href="download/CCSinstall.exe" download="">
+	                <button class="client_button">Скачать программу</button>
+                </a>
             </div>
 
             <div class="order">

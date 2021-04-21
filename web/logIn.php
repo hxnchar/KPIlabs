@@ -31,10 +31,14 @@
         <div class="login">
             
             <div class="div">
+                <h1>Вход</h1>
+                <h5>Впервые тут? <a href="/commerce.php"> Зарегистрируйтесь</a></h5>
                 <form action="" method="post">
-                <img src="images/logo.jpg" alt="">
-                <input type="email" placeholder="Введите логин" name="email" required>
-                    <br><input type="password" placeholder="Введите пароль" name="password" required>
+                    <br><br>
+                <p>Введите адрес электронной почты</p>
+                <input type="email" " name="email" required><br>
+                <p>Введите пароль</p>
+                    <input type="password" " name="password" required>
                     <br><input id="sub" type="submit" value="Войти">
                     <?php 
                         if(isset($message1)){
@@ -44,6 +48,12 @@
                         }
                     ?>
                 </form>
+                
+                <div id="or">Или</div>
+                <br><br>
+                <p>У вас еще нет пароля? Вы получите личный пароль на вашу почту, после первой покупки на сайте.</p>
+                <p>Забыли пароль? Перейдите по <a href="#">ссылке</a> укажите свою почту и получите свой пароль еще раз.</p>
+                <p>Все равно не получается войти? Обратитесь в тех. поддержку (кнопка находится справа снизу). Отзывчивые администраторы всегда готовы вам помочь.</p>
             </div>
         </div>
         

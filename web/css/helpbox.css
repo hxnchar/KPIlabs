@@ -1,0 +1,160 @@
+
+.help{
+    width: 60px;
+    height: 60px;
+    background: #2b74c7;
+    position: absolute;
+    bottom: 40px;
+    cursor: pointer;
+    right: 40px;
+    border: 2px solid #505050;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 15%);
+    background-image: url(../images/help.svg);
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    vertical-align: middle;
+    outline: none;
+    background-position-y: 18px;
+    overflow: visible;
+    position: fixed;
+    z-index: 10;
+}
+.help span{
+    transition: all 0.3s ease;
+    display: block;
+    border-radius: 22px;
+    border: 2px solid #fff;
+    width: 18px;
+    height: 18px;
+    background-color: #ec5b62;
+    position: absolute;
+    top: -1px;
+    right: 0;
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #fff;
+    font-weight: 700;
+    
+}
+.help p{
+    display: none;
+    transition: all 0.3s ease;
+    
+    position: absolute;
+    padding: 2.5px 3px;
+    font-size: 12px;
+    margin: 0;
+    line-height: 15px;
+    border: 2px solid #767676;
+    color: #fff;
+    background: #767676;
+    max-width: 200px;
+    bottom: 70px;
+    min-width: 80px;
+    right: -12px;
+    border-radius: 4px;
+}
+.help p::before{
+    transition: all 0.3s ease;
+    content: "";
+    position: absolute;
+    right: 34px;
+    width: 8px;
+    border-width: 4px 4px 0;
+    border-style: solid;
+    border-color: #767676 transparent;
+}
+.help p::after{
+    transition: all 0.3s ease;
+    content: "";
+    position: absolute;
+    right: 34px;
+    width: 8px;
+    border-width: 4px 4px 0;
+    border-style: solid;
+    border-color: #767676 transparent;
+    bottom: -5px;
+}
+
+.help_box{
+    transition: all 1s ease;
+    position: absolute;
+    opacity:0;
+    width: 380px;
+    height: 580px;
+    background-color: #6400de;
+    background-image: linear-gradient(330deg,#13d1b1,#6400de);
+    background-size: 50.3125rem 50.3125rem;
+    background-position: -6.25rem -7.5rem;
+    border-radius: 0.5em;
+    bottom: 40px;
+    right:30px;
+    z-index: 11;
+}
+.help_box .help_box_top{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+    height: 56.2px;
+}
+.help_box .help_box_bot{
+    height: 532px;
+}
+.help_box .help_box_top .help_box_logo{
+    align-items: center;
+    padding-left: 1.0625rem;
+}
+.help_box .help_box_top .help_box_logo img{
+    height: 56.2px;
+    width: 56.2px;
+    margin: .3125rem 0;
+    cursor: pointer;
+    display: block;
+}
+.help_box .help_box_top .help_box_hide{
+    float: right;
+    padding-right: 2.5rem;
+    padding-top: .375rem;
+    padding-bottom: .375rem;
+    background-image: url(../images/collapse.svg);
+    background-repeat: no-repeat;
+    background-size: 32px;
+    background-position-y: center;
+    cursor:pointer;
+}
+.help_box .help_box_bot .help_box_bot_header{
+    color: white;
+    margin-left: 1.25rem;
+    font-family: adobe-clean,Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
+}
+.help_box .help_box_bot .help_box_bot_header h2{
+    padding-top: 20px;
+}
+.help_box .help_box_bot .help_box_bot_header button{
+    position: absolute;
+    top: 340px;
+    left: 40%;
+    /* right: 50%; */
+    background: rgb(0,0,0,0);
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 700;
+    margin-top: 40px;
+    font-size: 20px;
+    transition: all .6s ease;
+
+}
+.help_box .help_box_bot .help_box_bot_header button:hover{
+    background:white;
+    color:black;
+}
+.help_box_bot_header p{
+    font-weight: 600;
+}

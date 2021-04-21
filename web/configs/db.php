@@ -1,9 +1,9 @@
 <?php
 //данные для подкючения я БД
 $server = 'localhost';
-$username = 'id15404895_root';
-$password = 'Q^N9XaWK81|\jWdn';
-$dbname = 'id15404895_skk';
+$username = 'root';
+$password = '';
+$dbname = 'skk';
 //подключение
 $connect = mysqli_connect($server, $username, $password,$dbname);
 //кодировка
