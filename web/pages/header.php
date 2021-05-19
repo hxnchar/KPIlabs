@@ -1,7 +1,7 @@
 <div class="header">
             <div class="one">
-            <img src="images/logo.jpg" alt="">
-            <p><a href="https://hypalgesic-splint.000webhostapp.com/">Главная</a></p>
+            <img src="images/logo.png" alt="">
+            <p><a href="/">Главная</a></p>
             </div>
             <div class="two">
             <p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">О нас</a></p>

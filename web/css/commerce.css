@@ -15,6 +15,7 @@
     border-radius: 0.5em;
     padding:10px;
     background-color: white;
+    position: relative;
 }
 .client_part #emailInput{
     margin: 10px 10px 10px 0;
@@ -35,15 +36,33 @@
 .client_part #submit{
     outline: none;
     background-color: #378ef0;
-    color:white;
-    padding:10px;
-    font-size: 20px;
-    border-radius: 10px;
-    margin-top: 10px;
+    transition: all 0.3s ease;
+    outline: none;
+    font-size: 18px;
+    color:#e8f0ef;
+    padding:7px;
+    border-radius: 15px;
+    margin-top: 20px;
 }
 .client_part #submit:hover{
     background-color: #2b74c7;
     cursor: pointer;
+}
+.client_button{
+    background-color: #7790acb6;
+    transition: all 0.3s ease;
+    outline: none;
+    font-size: 12px;
+    color:#e8f0ef;
+    padding:7px;
+    border-radius: 15px;
+    margin-top: 20px;
+    position: absolute;
+    top:230px;
+    left:200px;
+}
+.client_button:hover{
+    background-color: #7790acea;
 }
 .order{
     margin-top: -110px;

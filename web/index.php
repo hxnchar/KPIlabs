@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Система клімат контролю SKK</title>
     <link href="css/index.css" rel="stylesheet" text="text/css">
+    <link href="css/helpbox.css" rel="stylesheet" text="text/css">
 </head>
 <body>
     <div class="flex_box">
@@ -23,7 +24,7 @@
                         <li>Возможность автоматической настройки климата</li>
                         <li>Возможность ручной настройки климата</li>
                         <li>Понятный и приятный интерфейс</li>
-                        <li>Защита от испольования продукта посторонними и детьми</li>
+                        <li>Защита от использования продукта посторонними и детьми</li>
                     </ul>
                 </p>
                 <button><a href="commerce.php"> Приобрести</a> </button>
@@ -37,6 +38,14 @@
         </div>
         
         <?php include "pages/footer.php"?>
+
+        
+        <button aria-label="Свяжитесь с нами" class="help" aria-live="off" aria-expanded="false" style="display: block;">
+        <span></span><p>Зв’яжіться з нами</p></button>
+
+       
+
     </div>
+    <script src="js/index.js"></script>
 </body>
 </html>
