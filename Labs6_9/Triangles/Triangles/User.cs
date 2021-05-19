@@ -13,6 +13,7 @@ namespace Triangles
             Name = login;
             if (registration)
             {
+                if (!File.Exists("D:/courses/users.bd")) File.Create("D:/courses/users.bd");
                 using (var sw = File.AppendText("D:/courses/users.bd"))
                 {
                     sw.WriteLine($"{login},{password},0");
