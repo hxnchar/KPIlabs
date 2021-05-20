@@ -9,16 +9,58 @@ namespace Triangles
         public string Name;
         private string Path;
         public int Count;
+        public bool[] Done;
+        public User User;
+        public bool Alldone => Done[Count - 1];
 
-        public Course(string path)
+        public Course(string path, User user)
         {
+            User = user;
             Path = path;
-            using (var sr = new StreamReader(path + "/course.inf"))
+            string[] sDone;
+            using (var sr = new StreamReader(path + $"/course{user.Name}.inf"))
             {
                 Name = sr.ReadLine();
                 Count = int.Parse(sr.ReadLine() ?? string.Empty);
+                sDone = sr.ReadLine()?.Split(" ", StringSplitOptions.RemoveEmptyEntries);
             }
+
+            Done = new bool[Count];
+            if (sDone != null)
+                for (int i = 0; i < sDone.Length; i++)
+                {
+                    Done[i] = sDone[i] == "1";
+                }
         }
+
+        public void ShowNextLecture()
+        {
+            int current = 0;
+            for (int i = Count - 1; i >= 0; i--)
+            {
+                if (!Done[i])
+                {
+                    current = i + 1;
+                }
+            }
+
+            ShowLecture(current);
+        }
+
+        public void ShowNextTest()
+        {
+            int current = 0;
+            for (int i = Count - 1; i >= 0; i--)
+            {
+                if (!Done[i])
+                {
+                    current = i + 1;
+                }
+            }
+
+            ShowTest(current);
+        }
+
 
         public void ShowLecture(int lectureNumber)
         {
@@ -29,6 +71,7 @@ namespace Triangles
                 {
                     lecture = sr.ReadToEnd();
                 }
+
                 Console.WriteLine(lecture);
             }
             else
@@ -57,6 +100,7 @@ namespace Triangles
                             answers.Add(sr.ReadLine());
                             num++;
                         }
+
                         Console.WriteLine(currentString);
                         OutList(answers);
                         char answer = Console.ReadLine()[0];
@@ -66,11 +110,37 @@ namespace Triangles
                         }
                     }
                 }
-                Console.WriteLine($"Ваш результат - {points*100/countQuestions}%!");
+
+                Console.WriteLine($"Ваш результат - {points * 100 / countQuestions}%!");
+                if (points * 100 / countQuestions >= 60)
+                {
+                    Console.WriteLine("Ви можете перейти до наступного тесту");
+                    Done[testNumber - 1] = true;
+                    Rewrite();
+                }
+                else
+                {
+                    Console.WriteLine("Перечитайте лекцiю уважніше, та пройдiть тест знову:)");
+                }
             }
             else
             {
                 Console.WriteLine("This lecture does not exist");
+            }
+        }
+
+        private void Rewrite()
+        {
+            string sr = string.Empty;
+            foreach (var dn in Done)
+            {
+                sr += dn ? "1 " : "0 ";
+            }
+            using (var sw = new StreamWriter(Path + $"/course{User.Name}.inf", false))
+            {
+                sw.WriteLine(Name);
+                sw.WriteLine(Count);
+                sw.WriteLine(sr);
             }
         }
 
